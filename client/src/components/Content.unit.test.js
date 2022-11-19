@@ -11,4 +11,9 @@ describe("Content", () => {
     const title = screen.getByText("Coffee App");
     expect(title).toBeInTheDocument();
   });
+  test("can enter a coffee roaster", () => {
+    render(<Content />);
+    const input = screen.getByPlaceholderText("Enter a coffee roaster");
+    expect(input).toBeInTheDocument();
+  });
 });
