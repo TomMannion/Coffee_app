@@ -6,6 +6,11 @@ import Roaster from "./Roaster";
 const initialState = { roaster: { value: "" } };
 
 describe("Roaster", () => {
+  const initialState = { roaster: { value: "" } };
+  test("renders Roaster component", () => {
+    renderWithRedux(<Roaster />, { initialState });
+    screen.debug();
+  });
   test("has a roaster input", () => {
     renderWithRedux(<Roaster />, { initialState });
     const roaster = screen.getByPlaceholderText("Enter a coffee roaster");

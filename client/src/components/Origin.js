@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setOrigin } from "../features/originSlice";
 
-function Roaster(props) {
+function Origin() {
   const origin = useSelector((state) => state.origin.value);
   const dispatch = useDispatch();
 
@@ -17,4 +17,4 @@ function Roaster(props) {
   );
 }
 
-export default Roaster;
+export default Origin;
