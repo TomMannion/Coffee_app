@@ -1,4 +1,4 @@
-import { screen, act, fireEvent } from "@testing-library/react";
+import { screen, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { renderWithRedux } from "../utils/utils-for-tests";
 import BrewMethod from "./BrewMethod";
@@ -18,7 +18,7 @@ describe("BrewMethod", () => {
     renderWithRedux(<BrewMethod />, { initialState });
     const brewMethod = screen.getByPlaceholderText("Brew Method");
     act(() => {
-      fireEvent.change(brewMethod, { target: { value: "French Press" } });
+      userEvent.type(brewMethod, "French Press");
     });
     expect(brewMethod).toHaveValue("French Press");
   });
