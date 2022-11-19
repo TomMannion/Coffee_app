@@ -4,17 +4,18 @@ import { renderWithRedux } from "../utils/utils-for-tests";
 import Roaster from "./Roaster";
 
 describe("Roaster", () => {
+  const initialState = { roaster: { value: "" } };
   test("renders Roaster component", () => {
-    renderWithRedux(<Roaster />);
+    renderWithRedux(<Roaster />, { initialState });
     screen.debug();
   });
   test("has a roaster input", () => {
-    renderWithRedux(<Roaster />);
+    renderWithRedux(<Roaster />, { initialState });
     const roaster = screen.getByPlaceholderText("Enter a coffee roaster");
     expect(roaster).toBeInTheDocument();
   });
   test("has a roaster input that can be typed into", async () => {
-    renderWithRedux(<Roaster />);
+    renderWithRedux(<Roaster />, { initialState });
     act(() => {
       userEvent.type(
         screen.getByPlaceholderText("Enter a coffee roaster"),
