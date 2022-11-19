@@ -3,8 +3,6 @@ import userEvent from "@testing-library/user-event";
 import { renderWithRedux } from "../utils/utils-for-tests";
 import Roaster from "./Roaster";
 
-const initialState = { roaster: { value: "" } };
-
 describe("Roaster", () => {
   const initialState = { roaster: { value: "" } };
   test("renders Roaster component", () => {

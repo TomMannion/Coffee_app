@@ -4,6 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import roasterReducer from "../features/roasterSlice";
 import originReducer from "../features/originSlice";
+import brewMethodSlice from "../features/brewMethodSlice";
 
 export const renderWithRedux = (
   ui,
@@ -13,6 +14,7 @@ export const renderWithRedux = (
       reducer: {
         roaster: roasterReducer,
         origin: originReducer,
+        brewMethod: brewMethodSlice,
         preloadedState: initialState,
       },
     }),
