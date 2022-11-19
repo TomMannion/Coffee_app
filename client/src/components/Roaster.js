@@ -8,6 +8,7 @@ function Roaster(props) {
 
   return (
     <input
+      autoFocus
       className="roaster"
       type="text"
       placeholder="Enter a coffee roaster"
