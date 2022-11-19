@@ -1,12 +1,13 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setRoaster } from "../features/roasterSlice";
+import Roaster from "./Roaster";
 
 function Content(props) {
   return (
     <div className="content">
       <h1>Coffee App</h1>
-      <form className="addForm"></form>
+      <form className="addForm" role="form">
+        <Roaster />
+      </form>
     </div>
   );
 }
