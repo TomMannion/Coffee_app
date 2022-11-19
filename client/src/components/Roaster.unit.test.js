@@ -3,6 +3,8 @@ import userEvent from "@testing-library/user-event";
 import { renderWithRedux } from "../utils/utils-for-tests";
 import Roaster from "./Roaster";
 
+const initialState = { roaster: { value: "" } };
+
 describe("Roaster", () => {
   const initialState = { roaster: { value: "" } };
   test("renders Roaster component", () => {
@@ -19,11 +21,11 @@ describe("Roaster", () => {
     act(() => {
       userEvent.type(
         screen.getByPlaceholderText("Enter a coffee roaster"),
-        "Kafi"
+        "Blue Bottle"
       );
     });
     expect(screen.getByPlaceholderText("Enter a coffee roaster")).toHaveValue(
-      "Kafi"
+      "Blue Bottle"
     );
   });
 });
