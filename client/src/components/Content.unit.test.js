@@ -3,6 +3,7 @@ import Content from "./Content";
 
 // mock child component
 jest.mock("./Roaster", () => () => <div> Roaster </div>);
+jest.mock("./Origin", () => () => <div> Origin </div>);
 
 describe("Content", () => {
   test("has a title", () => {
@@ -19,5 +20,10 @@ describe("Content", () => {
     render(<Content />);
     const roaster = screen.getByText("Roaster");
     expect(roaster).toBeInTheDocument();
+  });
+  test("has an origin input", () => {
+    render(<Content />);
+    const origin = screen.getByText("Origin");
+    expect(origin).toBeInTheDocument();
   });
 });
