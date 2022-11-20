@@ -1,4 +1,5 @@
 import React from "react";
+import TextField from "@mui/material/TextField";
 import { useSelector, useDispatch } from "react-redux";
 import { setRoaster } from "../features/roasterSlice";
 
@@ -7,11 +8,11 @@ function Roaster() {
   const dispatch = useDispatch();
 
   return (
-    <input
+    <TextField
       autoFocus
       className="roaster"
       type="text"
-      placeholder="Enter a coffee roaster"
+      label="Enter a coffee roaster"
       value={roaster}
       onChange={(e) => dispatch(setRoaster(e.target.value))}
     />

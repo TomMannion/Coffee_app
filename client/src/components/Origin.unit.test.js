@@ -11,14 +11,15 @@ describe("Origin", () => {
   });
   test("has an origin input", () => {
     renderWithRedux(<Origin />, { initialState });
-    const origin = screen.getByPlaceholderText("Coffee Origin");
+    // get by label text
+    const origin = screen.getByLabelText("Coffee Origin");
     expect(origin).toBeInTheDocument();
   });
   test("has an origin input that can be typed into", async () => {
     renderWithRedux(<Origin />, { initialState });
     act(() => {
-      userEvent.type(screen.getByPlaceholderText("Coffee Origin"), "Kenya");
+      userEvent.type(screen.getByLabelText("Coffee Origin"), "Kenya");
     });
-    expect(screen.getByPlaceholderText("Coffee Origin")).toHaveValue("Kenya");
+    expect(screen.getByLabelText("Coffee Origin")).toHaveValue("Kenya");
   });
 });

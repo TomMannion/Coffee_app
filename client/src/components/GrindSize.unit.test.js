@@ -11,14 +11,14 @@ describe("GrindSize", () => {
   });
   test("has a grindSize input", () => {
     renderWithRedux(<GrindSize />, { initialState });
-    const grindSize = screen.getByPlaceholderText("Grind Size");
+    const grindSize = screen.getByLabelText("Grind Size");
     expect(grindSize).toBeInTheDocument();
   });
   test("has a grindSize input that can be typed into", async () => {
     renderWithRedux(<GrindSize />, { initialState });
     act(() => {
-      userEvent.type(screen.getByPlaceholderText("Grind Size"), "Medium");
+      userEvent.type(screen.getByLabelText("Grind Size"), "Medium");
     });
-    expect(screen.getByPlaceholderText("Grind Size")).toHaveValue("Medium");
+    expect(screen.getByLabelText("Grind Size")).toHaveValue("Medium");
   });
 });

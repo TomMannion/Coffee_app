@@ -1,4 +1,5 @@
 import React from "react";
+import TextField from "@mui/material/TextField";
 import { useSelector, useDispatch } from "react-redux";
 import { setIndividualPour } from "../features/pourGroupSlice";
 
@@ -11,10 +12,10 @@ function PourGroup() {
       {pourGroup.map((pour, index) => {
         return (
           <div className="pour" key={index}>
-            <input
+            <TextField
               className="pourWeight"
               type="text"
-              placeholder="Pour Weight"
+              label="Pour Weight"
               value={pour.pourWeight}
               onChange={(e) =>
                 dispatch(
@@ -25,10 +26,10 @@ function PourGroup() {
                 )
               }
             />
-            <input
+            <TextField
               className="pourTime"
               type="text"
-              placeholder="Pour Time"
+              label="Pour Time"
               value={pour.pourTime}
               onChange={(e) =>
                 dispatch(

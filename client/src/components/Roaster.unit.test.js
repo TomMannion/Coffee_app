@@ -11,18 +11,18 @@ describe("Roaster", () => {
   });
   test("has a roaster input", () => {
     renderWithRedux(<Roaster />, { initialState });
-    const roaster = screen.getByPlaceholderText("Enter a coffee roaster");
+    const roaster = screen.getByLabelText("Enter a coffee roaster");
     expect(roaster).toBeInTheDocument();
   });
   test("has a roaster input that can be typed into", async () => {
     renderWithRedux(<Roaster />, { initialState });
     act(() => {
       userEvent.type(
-        screen.getByPlaceholderText("Enter a coffee roaster"),
+        screen.getByLabelText("Enter a coffee roaster"),
         "Blue Bottle"
       );
     });
-    expect(screen.getByPlaceholderText("Enter a coffee roaster")).toHaveValue(
+    expect(screen.getByLabelText("Enter a coffee roaster")).toHaveValue(
       "Blue Bottle"
     );
   });

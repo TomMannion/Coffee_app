@@ -1,4 +1,5 @@
 import React from "react";
+import TextField from "@mui/material/TextField";
 import { useSelector, useDispatch } from "react-redux";
 import { setGrinder } from "../features/grinderSlice";
 
@@ -7,10 +8,10 @@ function Grinder() {
   const dispatch = useDispatch();
 
   return (
-    <input
+    <TextField
       className="grinder"
       type="text"
-      placeholder="Grinder"
+      label="Grinder"
       value={grinder}
       onChange={(e) => dispatch(setGrinder(e.target.value))}
     />

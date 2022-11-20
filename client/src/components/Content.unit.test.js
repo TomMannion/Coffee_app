@@ -6,8 +6,10 @@ jest.mock("./Roaster", () => () => <div> Roaster </div>);
 jest.mock("./Origin", () => () => <div> Origin </div>);
 jest.mock("./Grinder", () => () => <div> Grinder </div>);
 jest.mock("./GrindSize", () => () => <div> GrindSize </div>);
+jest.mock("./BrewMethod", () => () => <div> BrewMethod </div>);
 jest.mock("./AddPour", () => () => <div> AddPour </div>);
 jest.mock("./PourGroup", () => () => <div> PourGroup </div>);
+jest.mock("./Comment", () => () => <div> Comment </div>);
 
 describe("Content", () => {
   test("has a title", () => {
@@ -40,9 +42,19 @@ describe("Content", () => {
     const grindSize = screen.getByText("GrindSize");
     expect(grindSize).toBeInTheDocument();
   });
+  test("has a brewMethod input", () => {
+    render(<Content />);
+    const brewMethod = screen.getByText("BrewMethod");
+    expect(brewMethod).toBeInTheDocument();
+  });
   test("has an addPour button", () => {
     render(<Content />);
     const addPour = screen.getByText("AddPour");
     expect(addPour).toBeInTheDocument();
+  });
+  test("has a pourGroup input", () => {
+    render(<Content />);
+    const pourGroup = screen.getByText("PourGroup");
+    expect(pourGroup).toBeInTheDocument();
   });
 });

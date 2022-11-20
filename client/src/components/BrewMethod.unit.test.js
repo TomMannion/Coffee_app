@@ -11,12 +11,12 @@ describe("BrewMethod", () => {
   });
   test("has a brewMethod input", () => {
     renderWithRedux(<BrewMethod />, { initialState });
-    const brewMethod = screen.getByPlaceholderText("Brew Method");
+    const brewMethod = screen.getByLabelText("Brew Method");
     expect(brewMethod).toBeInTheDocument();
   });
   test("has a brewMethod input that can be typed into", async () => {
     renderWithRedux(<BrewMethod />, { initialState });
-    const brewMethod = screen.getByPlaceholderText("Brew Method");
+    const brewMethod = screen.getByLabelText("Brew Method");
     act(() => {
       userEvent.type(brewMethod, "French Press");
     });

@@ -1,4 +1,5 @@
 import React from "react";
+import TextField from "@mui/material/TextField";
 import { useSelector, useDispatch } from "react-redux";
 import { setBrewMethod } from "../features/brewMethodSlice";
 
@@ -7,10 +8,10 @@ function BrewMethod() {
   const dispatch = useDispatch();
 
   return (
-    <input
+    <TextField
       className="brewMethod"
       type="text"
-      placeholder="Brew Method"
+      label="Brew Method"
       value={brewMethod}
       onChange={(e) => dispatch(setBrewMethod(e.target.value))}
     />

@@ -1,4 +1,5 @@
 import React from "react";
+import TextField from "@mui/material/TextField";
 import { useSelector, useDispatch } from "react-redux";
 import { setOrigin } from "../features/originSlice";
 
@@ -7,10 +8,10 @@ function Origin() {
   const dispatch = useDispatch();
 
   return (
-    <input
+    <TextField
       className="origin"
       type="text"
-      placeholder="Coffee Origin"
+      label="Coffee Origin"
       value={origin}
       onChange={(e) => dispatch(setOrigin(e.target.value))}
     />

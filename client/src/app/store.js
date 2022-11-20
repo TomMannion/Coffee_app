@@ -5,6 +5,7 @@ import brewMethodReducer from "../features/brewMethodSlice";
 import grinderReducer from "../features/grinderSlice";
 import grindSizeReducer from "../features/grindSizeSlice";
 import pourGroupReducer from "../features/pourGroupSlice";
+import commentReducer from "../features/commentSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     grinder: grinderReducer,
     grindSize: grindSizeReducer,
     pourGroup: pourGroupReducer,
+    comment: commentReducer,
   },
 });

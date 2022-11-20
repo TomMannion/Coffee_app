@@ -11,14 +11,14 @@ describe("Grinder", () => {
   });
   test("has a grinder input", () => {
     renderWithRedux(<Grinder />, { initialState });
-    const grinder = screen.getByPlaceholderText("Grinder");
+    const grinder = screen.getByLabelText("Grinder");
     expect(grinder).toBeInTheDocument();
   });
   test("has a grinder input that can be typed into", async () => {
     renderWithRedux(<Grinder />, { initialState });
     act(() => {
-      userEvent.type(screen.getByPlaceholderText("Grinder"), "Hario Skerton");
+      userEvent.type(screen.getByLabelText("Grinder"), "Hario Skerton");
     });
-    expect(screen.getByPlaceholderText("Grinder")).toHaveValue("Hario Skerton");
+    expect(screen.getByLabelText("Grinder")).toHaveValue("Hario Skerton");
   });
 });
