@@ -1,6 +1,8 @@
 import React from "react";
 import Roaster from "./Roaster";
 import Origin from "./Origin";
+import Grinder from "./Grinder";
+import GrindSize from "./GrindSize";
 
 function Content(props) {
   return (
@@ -9,6 +11,8 @@ function Content(props) {
       <form className="addForm" role="form">
         <Roaster />
         <Origin />
+        <Grinder />
+        <GrindSize />
       </form>
     </div>
   );

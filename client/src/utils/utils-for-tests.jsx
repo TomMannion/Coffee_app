@@ -6,6 +6,7 @@ import roasterReducer from "../features/roasterSlice";
 import originReducer from "../features/originSlice";
 import brewMethodReducer from "../features/brewMethodSlice";
 import grinderReducer from "../features/grinderSlice";
+import grindSizeSlice from "../features/grindSizeSlice";
 
 const initialState = {};
 
@@ -19,6 +20,7 @@ export const renderWithRedux = (
         origin: originReducer,
         brewMethod: brewMethodReducer,
         grinder: grinderReducer,
+        grindSize: grindSizeSlice,
         preloadedState: initialState,
       },
     }),
