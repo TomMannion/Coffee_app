@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setGrinder } from "../features/grinderSlice";
 
 function Grinder() {
-  const grinder = useSelector((state) => state.grinder.value);
+  const grinder = useSelector((state) => state.grinder.grind);
   const dispatch = useDispatch();
 
   return (

@@ -1,12 +1,18 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "../features/addPourSlice";
+import { addToPourArray } from "../features/pourGroupSlice";
 
 function AddPour(props) {
-  const addPour = useSelector((state) => state.addPour.value);
+  const pourGroup = useSelector((state) => state.pourGroup.value);
   const dispatch = useDispatch();
   return (
-    <button className="addPour" onClick={() => dispatch(increment())}>
+    <button
+      className="addPour"
+      onClick={(e) => {
+        e.preventDefault();
+        dispatch(addToPourArray());
+      }}
+    >
       Add Pour
     </button>
   );

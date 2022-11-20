@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const brewMethodSlice = createSlice({
   name: "brewMethod",
   initialState: {
-    value: "",
+    brew: "",
   },
   reducers: {
     setBrewMethod: (state, action) => {
-      state.value = action.payload;
+      state.brew = action.payload;
     },
   },
 });

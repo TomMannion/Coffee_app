@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setOrigin } from "../features/originSlice";
 
 function Origin() {
-  const origin = useSelector((state) => state.origin.value);
+  const origin = useSelector((state) => state.origin.origin);
   const dispatch = useDispatch();
 
   return (

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setGrindSize } from "../features/grindSizeSlice";
 
 function GrindSize() {
-  const grindSize = useSelector((state) => state.grindSize.value);
+  const grindSize = useSelector((state) => state.grindSize.size);
   const dispatch = useDispatch();
 
   return (

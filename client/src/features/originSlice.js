@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const originSlice = createSlice({
   name: "origin",
   initialState: {
-    value: "",
+    origin: "",
   },
   reducers: {
     setOrigin: (state, action) => {
-      state.value = action.payload;
+      state.origin = action.payload;
     },
   },
 });

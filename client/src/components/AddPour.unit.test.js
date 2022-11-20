@@ -4,7 +4,7 @@ import { renderWithRedux } from "../utils/utils-for-tests";
 import AddPour from "./AddPour";
 
 describe("AddPour", () => {
-  const initialState = { pour: { value: 0 } };
+  const initialState = { pourGroup: { value: [] } };
   test("renders AddPour component", () => {
     renderWithRedux(<AddPour />, { initialState });
     screen.debug();
@@ -20,7 +20,7 @@ describe("AddPour", () => {
       userEvent.click(screen.getByText("Add Pour"));
     });
     // get the state from the store
-    const { addPour } = store.getState();
-    expect(addPour.value).toBe(1);
+    const { pourGroup } = store.getState();
+    expect(pourGroup.value.length).toBe(1);
   });
 });

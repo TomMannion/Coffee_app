@@ -3,6 +3,8 @@ import Roaster from "./Roaster";
 import Origin from "./Origin";
 import Grinder from "./Grinder";
 import GrindSize from "./GrindSize";
+import AddPour from "./AddPour";
+import PourGroup from "./PourGroup";
 
 function Content(props) {
   return (
@@ -13,6 +15,8 @@ function Content(props) {
         <Origin />
         <Grinder />
         <GrindSize />
+        <AddPour />
+        <PourGroup />
       </form>
     </div>
   );

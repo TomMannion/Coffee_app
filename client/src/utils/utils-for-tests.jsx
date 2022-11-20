@@ -7,7 +7,7 @@ import originReducer from "../features/originSlice";
 import brewMethodReducer from "../features/brewMethodSlice";
 import grinderReducer from "../features/grinderSlice";
 import grindSizeSlice from "../features/grindSizeSlice";
-import addPourReducer from "../features/addPourSlice";
+import pourGroupReducer from "../features/pourGroupSlice";
 
 export const renderWithRedux = (
   ui,
@@ -20,7 +20,7 @@ export const renderWithRedux = (
         brewMethod: brewMethodReducer,
         grinder: grinderReducer,
         grindSize: grindSizeSlice,
-        addPour: addPourReducer,
+        pourGroup: pourGroupReducer,
         preloadedState: initialState,
       },
     }),

@@ -4,7 +4,7 @@ import originReducer from "../features/originSlice";
 import brewMethodReducer from "../features/brewMethodSlice";
 import grinderReducer from "../features/grinderSlice";
 import grindSizeReducer from "../features/grindSizeSlice";
-import addPourReducer from "../features/addPourSlice";
+import pourGroupReducer from "../features/pourGroupSlice";
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +13,6 @@ export const store = configureStore({
     brewMethod: brewMethodReducer,
     grinder: grinderReducer,
     grindSize: grindSizeReducer,
-    addPour: addPourReducer,
+    pourGroup: pourGroupReducer,
   },
 });
