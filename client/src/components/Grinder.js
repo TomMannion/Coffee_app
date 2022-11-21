@@ -9,6 +9,9 @@ function Grinder() {
 
   return (
     <TextField
+      sx={{
+        width: 300,
+      }}
       className="grinder"
       type="text"
       label="Grinder"

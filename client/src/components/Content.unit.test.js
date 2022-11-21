@@ -10,18 +10,10 @@ jest.mock("./BrewMethod", () => () => <div> BrewMethod </div>);
 jest.mock("./AddPour", () => () => <div> AddPour </div>);
 jest.mock("./PourGroup", () => () => <div> PourGroup </div>);
 jest.mock("./Comment", () => () => <div> Comment </div>);
+jest.mock("./Submit", () => () => <div> Submit </div>);
+jest.mock("./Amount", () => () => <div> Amount </div>);
 
 describe("Content", () => {
-  test("has a title", () => {
-    render(<Content />);
-    const title = screen.getByText("Coffee App");
-    expect(title).toBeInTheDocument();
-  });
-  test("has a form", () => {
-    render(<Content />);
-    const form = screen.getByRole("form");
-    expect(form).toBeInTheDocument();
-  });
   test("has a roaster input", () => {
     render(<Content />);
     const roaster = screen.getByText("Roaster");
@@ -56,5 +48,20 @@ describe("Content", () => {
     render(<Content />);
     const pourGroup = screen.getByText("PourGroup");
     expect(pourGroup).toBeInTheDocument();
+  });
+  test("has a comment input", () => {
+    render(<Content />);
+    const comment = screen.getByText("Comment");
+    expect(comment).toBeInTheDocument();
+  });
+  test("has a submit button", () => {
+    render(<Content />);
+    const submit = screen.getByText("Submit");
+    expect(submit).toBeInTheDocument();
+  });
+  test("has an amount input", () => {
+    render(<Content />);
+    const amount = screen.getByText("Amount");
+    expect(amount).toBeInTheDocument();
   });
 });

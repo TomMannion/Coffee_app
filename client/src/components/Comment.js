@@ -12,6 +12,8 @@ function Comment() {
       className="comment"
       type="text"
       label="Comment"
+      multiline
+      rows={4}
       value={comment}
       onChange={(e) => dispatch(setComment(e.target.value))}
     />

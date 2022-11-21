@@ -9,6 +9,7 @@ import grinderReducer from "../features/grinderSlice";
 import grindSizeSlice from "../features/grindSizeSlice";
 import pourGroupReducer from "../features/pourGroupSlice";
 import commentReducer from "../features/commentSlice";
+import amountReducer from "../features/amountSlice";
 
 export const renderWithRedux = (
   ui,
@@ -23,6 +24,7 @@ export const renderWithRedux = (
         grindSize: grindSizeSlice,
         pourGroup: pourGroupReducer,
         comment: commentReducer,
+        amount: amountReducer,
         preloadedState: initialState,
       },
     }),

@@ -6,6 +6,7 @@ import grinderReducer from "../features/grinderSlice";
 import grindSizeReducer from "../features/grindSizeSlice";
 import pourGroupReducer from "../features/pourGroupSlice";
 import commentReducer from "../features/commentSlice";
+import amountReducer from "../features/amountSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,5 +17,6 @@ export const store = configureStore({
     grindSize: grindSizeReducer,
     pourGroup: pourGroupReducer,
     comment: commentReducer,
+    amount: amountReducer,
   },
 });

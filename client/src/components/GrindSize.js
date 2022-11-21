@@ -9,6 +9,9 @@ function GrindSize() {
 
   return (
     <TextField
+      sx={{
+        width: 300,
+      }}
       className="grindSize"
       type="text"
       label="Grind Size"

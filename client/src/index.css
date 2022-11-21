@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.comment {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.MuiSlider-root {
+  width: 400px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px)  {
+  .comment {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .MuiSlider-root {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
