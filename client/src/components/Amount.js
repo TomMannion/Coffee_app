@@ -12,7 +12,7 @@ function Amount() {
       sx={{
         width: 300,
       }}
-      className="Amount"
+      className="Coffee Amount"
       type="text"
       label="Amount"
       value={Amount}

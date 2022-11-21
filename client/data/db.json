@@ -1,4 +1,78 @@
 {
   "posts": [
+    {
+      "roaster": {
+        "roast": "Square Mile"
+      },
+      "origin": {
+        "origin": "Kenya"
+      },
+      "brewMethod": {
+        "brew": "V60"
+      },
+      "grinder": {
+        "grinder": "Comandate"
+      },
+      "grindSize": {
+        "size": "12"
+      },
+      "pourGroup": {
+        "value": [
+          {
+            "pour": "60",
+            "time": "30"
+          },
+          {
+            "pour": "240",
+            "time": "120"
+          }
+        ]
+      },
+      "comment": {
+        "comment": "Nice Balanced coffee."
+      },
+      "amount": {
+        "weight": "14g"
+      },
+      "waterTemp": {
+        "temp": "92"
+      },
+      "id": 1
+    },
+    {
+      "roaster": {
+        "roast": "Kafi"
+      },
+      "origin": {
+        "origin": "Ethiopia"
+      },
+      "brewMethod": {
+        "brew": "Aeropress"
+      },
+      "grinder": {
+        "grinder": "Hario"
+      },
+      "grindSize": {
+        "size": "20"
+      },
+      "pourGroup": {
+        "value": [
+          {
+            "pour": "300",
+            "time": "120"
+          }
+        ]
+      },
+      "comment": {
+        "comment": "Slightly bitter"
+      },
+      "amount": {
+        "weight": "20g"
+      },
+      "waterTemp": {
+        "temp": "90"
+      },
+      "id": 2
+    }
   ]
 }

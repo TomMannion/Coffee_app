@@ -7,6 +7,7 @@ import grindSizeReducer from "../features/grindSizeSlice";
 import pourGroupReducer from "../features/pourGroupSlice";
 import commentReducer from "../features/commentSlice";
 import amountReducer from "../features/amountSlice";
+import waterTempReducer from "../features/waterTempSlice";
 
 export const store = configureStore({
   reducer: {
@@ -18,5 +19,6 @@ export const store = configureStore({
     pourGroup: pourGroupReducer,
     comment: commentReducer,
     amount: amountReducer,
+    waterTemp: waterTempReducer,
   },
 });

@@ -12,6 +12,7 @@ jest.mock("./PourGroup", () => () => <div> PourGroup </div>);
 jest.mock("./Comment", () => () => <div> Comment </div>);
 jest.mock("./Submit", () => () => <div> Submit </div>);
 jest.mock("./Amount", () => () => <div> Amount </div>);
+jest.mock("./WaterTemp", () => () => <div> WaterTemp </div>);
 
 describe("Content", () => {
   test("has a roaster input", () => {
@@ -63,5 +64,10 @@ describe("Content", () => {
     render(<Content />);
     const amount = screen.getByText("Amount");
     expect(amount).toBeInTheDocument();
+  });
+  test("has a waterTemp input", () => {
+    render(<Content />);
+    const waterTemp = screen.getByText("WaterTemp");
+    expect(waterTemp).toBeInTheDocument();
   });
 });
