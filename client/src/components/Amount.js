@@ -22,14 +22,14 @@ function Amount() {
     // />
     <FormControl variant="outlined">
       <OutlinedInput
-        sx={{ width: "22ch" }}
+        sx={{ width: 120 }}
         className="Coffee Amount"
         type="text"
         value={Amount}
         onChange={(e) => dispatch(setAmount(e.target.value))}
         endAdornment={<InputAdornment position="end">g</InputAdornment>}
       />
-      <FormHelperText>Amount of coffee in grams</FormHelperText>
+      <FormHelperText>Amount of coffee</FormHelperText>
     </FormControl>
   );
 }

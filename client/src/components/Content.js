@@ -31,7 +31,7 @@ function Content(props) {
   return (
     <Grid container spacing={2}>
       <Grid container justifyContent="center">
-        <Grid container xs={8}>
+        <Grid container justifyContent="end" xs={5}>
           <GridItem comp={<Roaster />} />
           <GridItem comp={<Origin />} />
           <GridItem comp={<Grinder />} />

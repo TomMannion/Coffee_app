@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import CoffeeCard from "./CoffeeCard";
 
-function CoffeeGroup(props) {
+function CoffeeGroup() {
   const [coffeeGroup, setCoffeeGroup] = useState([]);
 
   useEffect(() => {
