@@ -8,6 +8,9 @@ import pourGroupReducer from "../features/pourGroupSlice";
 import commentReducer from "../features/commentSlice";
 import amountReducer from "../features/amountSlice";
 import waterTempReducer from "../features/waterTempSlice";
+import methodReducer from "../features/methodSlice";
+import titleReducer from "../features/titleSlice";
+import sliderReducer from "../features/sliderSlice";
 
 export const store = configureStore({
   reducer: {
@@ -20,5 +23,8 @@ export const store = configureStore({
     comment: commentReducer,
     amount: amountReducer,
     waterTemp: waterTempReducer,
+    method: methodReducer,
+    title: titleReducer,
+    slider: sliderReducer,
   },
 });

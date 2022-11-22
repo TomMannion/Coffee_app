@@ -9,9 +9,6 @@ function BrewMethod() {
 
   return (
     <TextField
-      sx={{
-        width: 300,
-      }}
       className="brewMethod"
       type="text"
       label="Brew Method"

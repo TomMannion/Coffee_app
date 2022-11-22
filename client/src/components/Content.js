@@ -12,6 +12,9 @@ import Comment from "./Comment";
 import Submit from "./Submit";
 import Amount from "./Amount";
 import WaterTemp from "./WaterTemp";
+import Title from "./Title";
+import Method from "./Method";
+import Slider from "./Slider";
 
 function GridItem({ comp }) {
   return (
@@ -27,13 +30,21 @@ function GridItem({ comp }) {
 function Content(props) {
   return (
     <Grid container spacing={2}>
-      <GridItem comp={<Roaster />} />
-      <GridItem comp={<Origin />} />
-      <GridItem comp={<Grinder />} />
-      <GridItem comp={<GrindSize />} />
-      <GridItem comp={<BrewMethod />} />
-      <GridItem comp={<Amount />} />
-      <GridItem comp={<WaterTemp />} />
+      <Grid container justifyContent="center">
+        <Grid container xs={8}>
+          <GridItem comp={<Roaster />} />
+          <GridItem comp={<Origin />} />
+          <GridItem comp={<Grinder />} />
+          <GridItem comp={<GrindSize />} />
+          <GridItem comp={<BrewMethod />} />
+          <GridItem comp={<Amount />} />
+          <GridItem comp={<WaterTemp />} />
+          <GridItem comp={<Title />} />
+        </Grid>
+        <Grid container xs={2} justifyContent="start" alignSelf="Center">
+          <Slider />
+        </Grid>
+      </Grid>
       <Grid xs={12}>
         <AddPour />
       </Grid>
@@ -42,6 +53,9 @@ function Content(props) {
       </Grid>
       <Grid xs={12}>
         <Comment />
+      </Grid>
+      <Grid xs={12}>
+        <Method />
       </Grid>
       <Grid xs={12}>
         <Submit />

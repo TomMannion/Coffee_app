@@ -9,9 +9,6 @@ function WaterTemp() {
 
   return (
     <TextField
-      sx={{
-        width: 300,
-      }}
       className="WaterTemp"
       type="text"
       label="Water Temperature"

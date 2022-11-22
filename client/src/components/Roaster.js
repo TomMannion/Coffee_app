@@ -9,9 +9,6 @@ function Roaster() {
 
   return (
     <TextField
-      sx={{
-        width: 300,
-      }}
       autoFocus
       className="roaster"
       type="text"

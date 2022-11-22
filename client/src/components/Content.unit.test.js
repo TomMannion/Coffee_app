@@ -13,6 +13,9 @@ jest.mock("./Comment", () => () => <div> Comment </div>);
 jest.mock("./Submit", () => () => <div> Submit </div>);
 jest.mock("./Amount", () => () => <div> Amount </div>);
 jest.mock("./WaterTemp", () => () => <div> WaterTemp </div>);
+jest.mock("./Title", () => () => <div> Title </div>);
+jest.mock("./Method", () => () => <div> Method </div>);
+jest.mock("./Slider", () => () => <div> Slider </div>);
 
 describe("Content", () => {
   test("has a roaster input", () => {
@@ -69,5 +72,20 @@ describe("Content", () => {
     render(<Content />);
     const waterTemp = screen.getByText("WaterTemp");
     expect(waterTemp).toBeInTheDocument();
+  });
+  test("has a title input", () => {
+    render(<Content />);
+    const title = screen.getByText("Title");
+    expect(title).toBeInTheDocument();
+  });
+  test("has a method input", () => {
+    render(<Content />);
+    const method = screen.getByText("Method");
+    expect(method).toBeInTheDocument();
+  });
+  test("has a slider input", () => {
+    render(<Content />);
+    const slider = screen.getByText("Slider");
+    expect(slider).toBeInTheDocument();
   });
 });

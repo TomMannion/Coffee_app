@@ -9,9 +9,6 @@ function Origin() {
 
   return (
     <TextField
-      sx={{
-        width: 300,
-      }}
       className="origin"
       type="text"
       label="Coffee Origin"

@@ -1,6 +1,8 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+import { useSelector, useDispatch } from "react-redux";
+import { setSlider } from "../features/sliderSlice";
 
 const marks = [
   {
@@ -14,6 +16,9 @@ const marks = [
 ];
 
 export default function VerticalSlider() {
+  const slider = useSelector((state) => state.slider.slider);
+  const dispatch = useDispatch();
+
   function preventHorizontalKeyboardNavigation(event) {
     if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       event.preventDefault();
@@ -29,10 +34,12 @@ export default function VerticalSlider() {
           },
         }}
         orientation="vertical"
-        defaultValue={30}
-        aria-label="Temperature"
+        defaultValue={50}
+        aria-label="Taste"
         valueLabelDisplay="auto"
         marks={marks}
+        value={slider}
+        onChange={(e) => dispatch(setSlider(e.target.value))}
         onKeyDown={preventHorizontalKeyboardNavigation}
       />
     </Box>
