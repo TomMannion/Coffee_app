@@ -2,7 +2,7 @@
   "posts": [
     {
       "roaster": {
-        "roast": "Square Mile"
+        "roast": "Kafi"
       },
       "origin": {
         "origin": "Kenya"
@@ -11,7 +11,7 @@
         "brew": "V60"
       },
       "grinder": {
-        "grinder": "Comandate"
+        "grinder": "Comandante"
       },
       "grindSize": {
         "size": "12"
@@ -23,56 +23,29 @@
             "time": "30"
           },
           {
-            "pour": "240",
-            "time": "120"
+            "time": "90"
           }
         ]
       },
       "comment": {
-        "comment": "Nice Balanced coffee."
+        "comment": "Slightly too bitter."
       },
       "amount": {
-        "weight": "14g"
+        "weight": "20"
       },
       "waterTemp": {
-        "temp": "92"
+        "temp": "85"
+      },
+      "method": {
+        "text": "Bloom the grounds with 60g of water, then pour the rest in one continual pour."
+      },
+      "title": {
+        "title": "Dream Recipe"
+      },
+      "slider": {
+        "taste": 84
       },
       "id": 1
-    },
-    {
-      "roaster": {
-        "roast": "Kafi"
-      },
-      "origin": {
-        "origin": "Ethiopia"
-      },
-      "brewMethod": {
-        "brew": "Aeropress"
-      },
-      "grinder": {
-        "grinder": "Hario"
-      },
-      "grindSize": {
-        "size": "20"
-      },
-      "pourGroup": {
-        "value": [
-          {
-            "pour": "300",
-            "time": "120"
-          }
-        ]
-      },
-      "comment": {
-        "comment": "Slightly bitter"
-      },
-      "amount": {
-        "weight": "20g"
-      },
-      "waterTemp": {
-        "temp": "90"
-      },
-      "id": 2
     }
   ]
 }
