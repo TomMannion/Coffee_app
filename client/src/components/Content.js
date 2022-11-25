@@ -29,7 +29,7 @@ function GridItem({ comp }) {
 
 function Content(props) {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{ pt: 4 }}>
       <Grid container justifyContent="center">
         <Grid container justifyContent="end" xs={5}>
           <GridItem comp={<Roaster />} />

@@ -2,13 +2,15 @@ import "./App.css";
 import Content from "./components/Content";
 import CoffeeGroup from "./components/CoffeeGroup";
 import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Content />} />
-        <Route path="/coffee" element={<CoffeeGroup />} />
+        <Route path="/" element={<CoffeeGroup />} />
+        <Route path="/post" element={<Content />} />
       </Routes>
     </div>
   );
