@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
+import Button from "@mui/material/Button";
 
 const Timer = () => {
   const [timer, setTimer] = useState(["1", "1", "1"]);
@@ -68,13 +69,15 @@ const Timer = () => {
           </Grid>
         ))}
       </Grid>
-      <button
-        onClick={() => {
-          startTimer();
-        }}
-      >
-        Start
-      </button>
+      {isRunning ? (
+        <Button variant="outlined" onClick={startTimer}>
+          START
+        </Button>
+      ) : (
+        <Button variant="contained" onClick={startTimer}>
+          PAUSE
+        </Button>
+      )}
     </div>
   );
 };
