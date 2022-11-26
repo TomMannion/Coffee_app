@@ -3,7 +3,6 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CoffeeCard from "./CoffeeCard";
-import Timer from "./Timer";
 
 function CoffeeGroup() {
   const [coffeeGroup, setCoffeeGroup] = useState([]);
@@ -16,7 +15,6 @@ function CoffeeGroup() {
 
   return (
     <Grid container spacing={2}>
-      <Timer />
       {coffeeGroup.map((post, index) => (
         <Grid
           container

@@ -16,6 +16,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Timer from "./Timer";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -74,6 +75,7 @@ const CoffeeCard = ({ post }) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
+          <Timer />
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>Pour water</Typography>
         </CardContent>

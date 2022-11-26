@@ -1,14 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Unstable_Grid2";
 
 const Timer = () => {
-  // We need ref in this, because we are dealing
-  // with JS setInterval to keep track of it and
-  // stop it when needed
-
-  // The state for our timer
-  const [timer, setTimer] = useState(["20", "30", "10"]);
+  const [timer, setTimer] = useState(["1", "1", "1"]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning, setIsRunning] = useState(true);
   const isRunningRef = useRef(isRunning);
   const timerRef = useRef(timer);
   const currentIndexRef = useRef(currentIndex);
@@ -23,14 +20,16 @@ const Timer = () => {
   };
 
   function updateTimer() {
-    const newTimer = timerRef.current;
-    const newCurrentIndex = currentIndexRef.current;
-    newTimer[newCurrentIndex] = newTimer[newCurrentIndex] - 1;
-    timerRef.current = newTimer;
-    setTimer([...newTimer]);
-    if (newTimer[newCurrentIndex] === 0) {
-      currentIndexRef.current = newCurrentIndex + 1;
-      setCurrentIndex(newCurrentIndex + 1);
+    if (currentIndexRef.current < timerRef.current.length) {
+      const newTimer = timerRef.current;
+      const newCurrentIndex = currentIndexRef.current;
+      newTimer[newCurrentIndex] = newTimer[newCurrentIndex] - 1;
+      timerRef.current = newTimer;
+      setTimer([...newTimer]);
+      if (newTimer[newCurrentIndex] === 0) {
+        currentIndexRef.current = newCurrentIndex + 1;
+        setCurrentIndex(newCurrentIndex + 1);
+      }
     }
   }
 
@@ -44,11 +43,31 @@ const Timer = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // const percentage = Math.round((secondsLeft / totalSeconds) * 100);
+
   return (
     <div className="Timer">
-      {timer.map((time, index) => (
-        <div key={time + `${index}`}>{time}</div>
-      ))}
+      <Grid container spacing={2} justifyContent="center">
+        {timer.map((time, index) => (
+          <Grid
+            key={"time" + index}
+            item
+            xs={2}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              margin: "5px",
+              borderRadius: "50%",
+              background: currentIndex > index ? "red" : "pink",
+              width: "60px",
+              height: "60px",
+            }}
+          >
+            {time}
+          </Grid>
+        ))}
+      </Grid>
       <button
         onClick={() => {
           startTimer();
