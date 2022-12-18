@@ -9,7 +9,7 @@ import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
+import { pink } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState, useEffect } from "react";
@@ -33,16 +33,31 @@ const CoffeeCard = ({ post }) => {
     setExpanded(!expanded);
   };
 
+  // const tasteProfile = (taste) => {
+  //   if (taste < 20) {
+  //     ("Very acidic");
+  //   } else if (taste < 40) {
+  //     ("Acidic");
+  //   } else if (taste < 60) {
+  //     ("Balanced");
+  //   } else if (taste < 80) {
+  //     ("Bitter");
+  //   } else {
+  //     ("Very bitter");
+  //   }
+  // };
+
+  console.log("post", post);
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor: pink[200] }} aria-label="recipe">
+            {post.brewMethod.brew.slice(0, 3).toUpperCase()}
           </Avatar>
         }
-        title="Placeholder"
-        subheader="Date Placeholder"
+        title={post.title.title}
       />
       <CardMedia
         component="img"
@@ -73,8 +88,17 @@ const CoffeeCard = ({ post }) => {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Timer times={post.pourGroup.value} />
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>Pour water</Typography>
+          <Typography pt={2} paragraph>
+            Method: {post.method.text}
+          </Typography>
+          <Typography paragraph>
+            Amount of Coffee: {post.amount.weight}g
+          </Typography>
+          <Typography paragraph>Origin: {post.origin.origin}</Typography>
+          <Typography paragraph>
+            Taste profile: {post.amount.weight}g
+          </Typography>
+          <Typography paragraph>Grinder: {post.grinder.grinder}</Typography>
         </CardContent>
       </Collapse>
     </Card>
