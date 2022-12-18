@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
+
 import Button from "@mui/material/Button";
 
-const Timer = () => {
-  const [timer, setTimer] = useState(["1", "1", "1"]);
+const Timer = ({ times }) => {
+  const [timer, setTimer] = useState(times.map((time) => Number(time.time)));
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
   const isRunningRef = useRef(isRunning);
@@ -18,6 +18,15 @@ const Timer = () => {
       isRunningRef.current = true;
     }
     setIsRunning(isRunningRef.current);
+  };
+
+  const resetTimer = () => {
+    setTimer(times.map((time) => Number(time.time)));
+    setCurrentIndex(0);
+    currentIndexRef.current = 0;
+    isRunningRef.current = true;
+    setIsRunning(isRunningRef.current);
+    timerRef.current = times.map((time) => Number(time.time));
   };
 
   function updateTimer() {
@@ -42,30 +51,35 @@ const Timer = () => {
       updateTimer();
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, timer);
 
   // const percentage = Math.round((secondsLeft / totalSeconds) * 100);
 
   return (
     <div className="Timer">
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2} justifyContent="center" pb={2}>
         {timer.map((time, index) => (
-          <Grid
-            key={"time" + index}
-            item
-            xs={2}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              margin: "5px",
-              borderRadius: "50%",
-              background: currentIndex > index ? "red" : "pink",
-              width: "60px",
-              height: "60px",
-            }}
-          >
-            {time}
+          <Grid container justifyContent="center" xs={3} mb={2}>
+            <Grid
+              key={"time" + index}
+              item
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                // borderRadius: "50%",
+                background: `linear-gradient(90deg, rgba(231,143,143,1) ${
+                  100 - (100 / times[index].time) * time
+                }%, rgba(140,237,148,1) ${
+                  100 - (100 / times[index].time) * time
+                }%)`,
+                width: "100%",
+                height: "45px",
+              }}
+            >
+              {time}s
+            </Grid>
+            <div>{times[index].pour}g</div>
           </Grid>
         ))}
       </Grid>
@@ -78,6 +92,9 @@ const Timer = () => {
           PAUSE
         </Button>
       )}
+      <Button variant="contained" onClick={resetTimer}>
+        RESET
+      </Button>
     </div>
   );
 };

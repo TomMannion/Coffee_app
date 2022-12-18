@@ -11,10 +11,7 @@ import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import Timer from "./Timer";
 
@@ -75,7 +72,7 @@ const CoffeeCard = ({ post }) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Timer />
+          <Timer times={post.pourGroup.value} />
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>Pour water</Typography>
         </CardContent>
