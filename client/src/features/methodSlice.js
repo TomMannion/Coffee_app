@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const methodSlice = createSlice({
   name: "method",
   initialState: {
-    text: "",
+    value: "",
   },
   reducers: {
     setMethod: (state, action) => {
-      state.text = action.payload;
+      state.value = action.payload;
     },
   },
 });

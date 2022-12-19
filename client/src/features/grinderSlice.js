@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const grinderSlice = createSlice({
   name: "grinder",
   initialState: {
-    grinder: "",
+    value: "",
   },
   reducers: {
     setGrinder: (state, action) => {
-      state.grinder = action.payload;
+      state.value = action.payload;
     },
   },
 });

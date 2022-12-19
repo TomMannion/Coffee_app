@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const grindSizeSlice = createSlice({
   name: "grindSize",
   initialState: {
-    size: "",
+    value: "",
   },
   reducers: {
     setGrindSize: (state, action) => {
-      state.size = action.payload;
+      state.value = action.payload;
     },
   },
 });

@@ -1,67 +1,28 @@
 {
   "posts": [
     {
-      "roaster": {
-        "roast": "Kafi"
-      },
-      "origin": {
-        "origin": "Kenya"
-      },
-      "brewMethod": {
-        "brew": "V60"
-      },
-      "grinder": {
-        "grinder": "Comandante"
-      },
-      "grindSize": {
-        "size": "12"
-      },
-      "pourGroup": {
-        "value": [
-          {
-            "pour": "60",
-            "time": "30"
-          },
-          {
-            "pour": "60",
-            "time": "30"
-          },
-          {
-            "pour": "60",
-            "time": "30"
-          },
-          {
-            "pour": "60",
-            "time": "30"
-          },
-          {
-            "pour": "60",
-            "time": "30"
-          },
-          {
-            "pour": "120",
-            "time": "90"
-          }
-        ]
-      },
-      "comment": {
-        "comment": "Slightly too bitter."
-      },
-      "amount": {
-        "weight": "20"
-      },
-      "waterTemp": {
-        "temp": "85"
-      },
-      "method": {
-        "text": "Bloom the grounds with 60g of water, then pour the rest in one continual pour."
-      },
-      "title": {
-        "title": "Dream Recipe"
-      },
-      "slider": {
-        "taste": 84
-      },
+      "roaster": "test",
+      "origin": "test",
+      "brewMethod": "test",
+      "grinder": "test",
+      "grindSize": "27",
+      "pourGroup": [
+        {
+          "pourWeight": "20",
+          "pourTime": "20"
+        },
+        {
+          "pourWeight": "20",
+          "pourTime": "20"
+        }
+      ],
+      "comment": "test",
+      "coffeeWeight": "27",
+      "waterTemp": "27",
+      "method": "test",
+      "title": "test",
+      "tasteProfile": 47,
+      "image": "https://picsum.photos/200",
       "id": 1
     }
   ]

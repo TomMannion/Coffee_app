@@ -54,22 +54,20 @@ const CoffeeCard = ({ post }) => {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: pink[200] }} aria-label="recipe">
-            {post.brewMethod.brew.slice(0, 3).toUpperCase()}
+            {post.brewMethod.slice(0, 3).toUpperCase()}
           </Avatar>
         }
-        title={post.title.title}
+        title={post.title}
       />
       <CardMedia
         component="img"
         height="194"
-        image={
-          "https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg"
-        }
+        image={post.image}
         alt="PlaceHolder alt"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {post.comment.comment}
+          {post.comment}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -87,18 +85,16 @@ const CoffeeCard = ({ post }) => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Timer times={post.pourGroup.value} />
+          <Timer times={post.pourGroup} />
           <Typography pt={2} paragraph>
-            Method: {post.method.text}
+            Method: {post.method}
           </Typography>
           <Typography paragraph>
-            Amount of Coffee: {post.amount.weight}g
+            Amount of Coffee: {post.coffeeWeight}g
           </Typography>
-          <Typography paragraph>Origin: {post.origin.origin}</Typography>
-          <Typography paragraph>
-            Taste profile: {post.amount.weight}g
-          </Typography>
-          <Typography paragraph>Grinder: {post.grinder.grinder}</Typography>
+          <Typography paragraph>Origin: {post.origin}</Typography>
+          <Typography paragraph>Taste profile: {post.tasteProfile}</Typography>
+          <Typography paragraph>Grinder: {post.grinder}</Typography>
         </CardContent>
       </Collapse>
     </Card>

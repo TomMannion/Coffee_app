@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const titleSlice = createSlice({
   name: "title",
   initialState: {
-    title: "",
+    value: "",
   },
   reducers: {
     setTitle: (state, action) => {
-      state.title = action.payload;
+      state.value = action.payload;
     },
   },
 });

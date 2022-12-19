@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const roasterSlice = createSlice({
   name: "roaster",
   initialState: {
-    roast: "",
+    value: "",
   },
   reducers: {
     setRoaster: (state, action) => {
-      state.roast = action.payload;
+      state.value = action.payload;
     },
   },
 });

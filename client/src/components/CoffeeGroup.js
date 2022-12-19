@@ -8,7 +8,7 @@ function CoffeeGroup() {
   const [coffeeGroup, setCoffeeGroup] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3500/posts").then((res) => {
+    axios.get("http://localhost:3500/posts/all").then((res) => {
       setCoffeeGroup(res.data);
     });
   }, []);

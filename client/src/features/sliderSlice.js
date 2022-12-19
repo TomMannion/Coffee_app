@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const sliderSlice = createSlice({
   name: "slider",
   initialState: {
-    taste: "",
+    value: "",
   },
   reducers: {
     setSlider: (state, action) => {
-      state.taste = action.payload;
+      state.value = action.payload;
     },
   },
 });

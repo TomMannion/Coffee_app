@@ -4,7 +4,9 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Button from "@mui/material/Button";
 
 const Timer = ({ times }) => {
-  const [timer, setTimer] = useState(times.map((time) => Number(time.time)));
+  const [timer, setTimer] = useState(
+    times.map((time) => Number(time.pourTime))
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
   const isRunningRef = useRef(isRunning);
@@ -21,12 +23,12 @@ const Timer = ({ times }) => {
   };
 
   const resetTimer = () => {
-    setTimer(times.map((time) => Number(time.time)));
+    setTimer(times.map((time) => Number(time.pourTime)));
     setCurrentIndex(0);
     currentIndexRef.current = 0;
     isRunningRef.current = true;
     setIsRunning(isRunningRef.current);
-    timerRef.current = times.map((time) => Number(time.time));
+    timerRef.current = times.map((time) => Number(time.pourTime));
   };
 
   function updateTimer() {
@@ -59,9 +61,14 @@ const Timer = ({ times }) => {
     <div className="Timer">
       <Grid container spacing={2} justifyContent="center" pb={2}>
         {timer.map((time, index) => (
-          <Grid container justifyContent="center" xs={3} mb={2}>
+          <Grid
+            container
+            key={"time" + index}
+            justifyContent="center"
+            xs={3}
+            mb={2}
+          >
             <Grid
-              key={"time" + index}
               item
               style={{
                 display: "flex",
@@ -69,9 +76,9 @@ const Timer = ({ times }) => {
                 alignItems: "center",
                 // borderRadius: "50%",
                 background: `linear-gradient(90deg, rgba(231,143,143,1) ${
-                  100 - (100 / times[index].time) * time
+                  100 - (100 / times[index].pourTime) * time
                 }%, rgba(140,237,148,1) ${
-                  100 - (100 / times[index].time) * time
+                  100 - (100 / times[index].pourTime) * time
                 }%)`,
                 width: "100%",
                 height: "45px",
@@ -79,7 +86,7 @@ const Timer = ({ times }) => {
             >
               {time}s
             </Grid>
-            <div>{times[index].pour}g</div>
+            <div>{times[index].pourWeight}g</div>
           </Grid>
         ))}
       </Grid>

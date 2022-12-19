@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const amountSlice = createSlice({
   name: "amount",
   initialState: {
-    weight: "",
+    value: "",
   },
   reducers: {
     setAmount: (state, action) => {
-      state.weight = action.payload;
+      state.value = action.payload;
     },
   },
 });
