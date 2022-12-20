@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setMethod } from "../features/methodSlice";
 
 function Method() {
-  const method = useSelector((state) => state.method.text);
+  const method = useSelector((state) => state.value);
   const dispatch = useDispatch();
 
   return (
