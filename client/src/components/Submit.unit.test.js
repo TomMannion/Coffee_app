@@ -13,6 +13,23 @@ jest.mock("axios", () => ({
   post: jest.fn(),
 }));
 
+const mockStore = {
+  roaster: { value: "roaster" },
+  origin: { value: "origin" },
+  grinder: { value: "grinder" },
+  grindSize: { value: "grindSize" },
+  brewMethod: { value: "brewMethod" },
+  addPour: { value: "addPour" },
+  pourGroup: { value: [] },
+  method: { value: "method" },
+  comment: { value: "comment" },
+  slider: { value: "slider" },
+  submit: { value: "submit" },
+  amount: { value: "amount" },
+  waterTemp: { value: "waterTemp" },
+  title: { value: "title" },
+};
+
 describe("Submit", () => {
   beforeEach(() => {
     useDispatchMock.mockImplementation(() => () => {});
@@ -25,23 +42,6 @@ describe("Submit", () => {
 
   const useSelectorMock = reactRedux.useSelector;
   const useDispatchMock = reactRedux.useDispatch;
-
-  const mockStore = {
-    roaster: { value: "roaster" },
-    origin: { value: "origin" },
-    grinder: { value: "grinder" },
-    grindSize: { value: "grindSize" },
-    brewMethod: { value: "brewMethod" },
-    addPour: { value: "addPour" },
-    pourGroup: { value: [] },
-    method: { value: "method" },
-    comment: { value: "comment" },
-    slider: { value: "slider" },
-    submit: { value: "submit" },
-    amount: { value: "amount" },
-    waterTemp: { value: "waterTemp" },
-    title: { value: "title" },
-  };
 
   test("has a submit button", () => {
     render(<Submit />);
