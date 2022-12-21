@@ -60,7 +60,6 @@ function Submit() {
   };
 
   const handleSubmit = async () => {
-    console.log(formatSubmit());
     await axios.post("http://localhost:3500/posts/create", formatSubmit());
     window.location.reload(false);
   };

@@ -11,14 +11,6 @@ function Amount() {
   const dispatch = useDispatch();
 
   return (
-    // <TextField
-    //   className="Coffee Amount"
-    //   type="text"
-    //   label="Amount"
-    //   value={Amount}
-    //   onChange={(e) => dispatch(setAmount(e.target.value))}
-    //   endAdornment={<InputAdornment position="end">g</InputAdornment>}
-    // />
     <FormControl variant="outlined">
       <OutlinedInput
         sx={{ width: 120 }}

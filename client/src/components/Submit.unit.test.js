@@ -13,6 +13,11 @@ jest.mock("axios", () => ({
   post: jest.fn(),
 }));
 
+// let assignMock = jest.fn();
+
+// delete window.location;
+// window.location = { assign: assignMock };
+
 const mockStore = {
   roaster: { value: "roaster" },
   origin: { value: "origin" },
@@ -34,10 +39,15 @@ describe("Submit", () => {
   beforeEach(() => {
     useDispatchMock.mockImplementation(() => () => {});
     useSelectorMock.mockImplementation((selector) => selector(mockStore));
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: { reload: jest.fn() },
+    });
   });
   afterEach(() => {
     useDispatchMock.mockClear();
     useSelectorMock.mockClear();
+    // assignMock.mockClear();
   });
 
   const useSelectorMock = reactRedux.useSelector;
