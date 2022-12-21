@@ -5,10 +5,6 @@ import Grinder from "./Grinder";
 
 describe("Grinder", () => {
   const initialState = { grinder: { value: "" } };
-  test("renders Grinder component", () => {
-    renderWithRedux(<Grinder />, { initialState });
-    screen.debug();
-  });
   test("has a grinder input", () => {
     renderWithRedux(<Grinder />, { initialState });
     const grinder = screen.getByLabelText("Grinder");

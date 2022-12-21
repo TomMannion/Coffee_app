@@ -6,15 +6,6 @@ import Navbar from "./Navbar";
 
 describe("Navbar", () => {
   const initialState = { pourGroup: { value: [] } };
-  test("renders Navbar component", () => {
-    renderWithRedux(
-      <MemoryRouter>
-        <Navbar />
-      </MemoryRouter>,
-      { initialState }
-    );
-    screen.debug();
-  });
   test("has a logo", () => {
     renderWithRedux(
       <MemoryRouter>

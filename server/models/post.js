@@ -5,7 +5,7 @@ const postSchema = new mongoose.Schema({
   origin: String,
   brewMethod: String,
   grinder: String,
-  grindSize: String,
+  grindSize: Number,
   pourGroup: { type: Array, default: [] },
   comment: String,
   coffeeWeight: Number,

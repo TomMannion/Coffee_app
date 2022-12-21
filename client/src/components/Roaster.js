@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setRoaster } from "../features/roasterSlice";
 
 function Roaster() {
-  const roaster = useSelector((state) => state.roaster.roast);
+  const roaster = useSelector((state) => state.roaster.value);
   const dispatch = useDispatch();
 
   return (

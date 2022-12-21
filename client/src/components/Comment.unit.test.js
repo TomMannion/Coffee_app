@@ -5,10 +5,6 @@ import Comment from "./Comment";
 
 describe("Comment", () => {
   const initialState = { comment: { value: "" } };
-  test("renders Comment component", () => {
-    renderWithRedux(<Comment />, { initialState });
-    screen.debug();
-  });
   test("has a comment input", () => {
     renderWithRedux(<Comment />, { initialState });
     const comment = screen.getByLabelText("Comment");

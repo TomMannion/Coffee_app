@@ -1,5 +1,4 @@
 import React from "react";
-import TextField from "@mui/material/TextField";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormHelperText from "@mui/material/FormHelperText";
@@ -8,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setAmount } from "../features/amountSlice";
 
 function Amount() {
-  const Amount = useSelector((state) => state.amount.weight);
+  const Amount = useSelector((state) => state.amount.value);
   const dispatch = useDispatch();
 
   return (

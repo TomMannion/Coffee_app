@@ -5,10 +5,6 @@ import Origin from "./Origin";
 
 describe("Origin", () => {
   const initialState = { origin: { value: "" } };
-  test("renders Origin component", () => {
-    renderWithRedux(<Origin />, { initialState });
-    screen.debug();
-  });
   test("has an origin input", () => {
     renderWithRedux(<Origin />, { initialState });
     // get by label text

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setBrewMethod } from "../features/brewMethodSlice";
 
 function BrewMethod() {
-  const brewMethod = useSelector((state) => state.brewMethod.brew);
+  const brewMethod = useSelector((state) => state.brewMethod.value);
   const dispatch = useDispatch();
 
   return (

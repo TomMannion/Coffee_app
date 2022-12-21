@@ -5,10 +5,6 @@ import AddPour from "./AddPour";
 
 describe("AddPour", () => {
   const initialState = { pourGroup: { value: [] } };
-  test("renders AddPour component", () => {
-    renderWithRedux(<AddPour />, { initialState });
-    screen.debug();
-  });
   test("has an Add Pour button", () => {
     renderWithRedux(<AddPour />, { initialState });
     const addPour = screen.getByText("Add Pour");

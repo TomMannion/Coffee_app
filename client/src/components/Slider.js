@@ -16,7 +16,7 @@ const marks = [
 ];
 
 export default function VerticalSlider() {
-  const slider = useSelector((state) => state.slider.slider);
+  const slider = useSelector((state) => state.slider.value);
   const dispatch = useDispatch();
 
   function preventHorizontalKeyboardNavigation(event) {

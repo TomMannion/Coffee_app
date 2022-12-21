@@ -5,10 +5,6 @@ import Amount from "./Amount";
 
 describe("Amount", () => {
   const initialState = { Amount: { value: "" } };
-  test("renders Amount component", () => {
-    renderWithRedux(<Amount />, { initialState });
-    screen.debug();
-  });
   test("has a Amount input", () => {
     renderWithRedux(<Amount />, { initialState });
     const Amount = screen.getByLabelText("Amount of Coffee");

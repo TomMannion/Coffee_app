@@ -12,9 +12,10 @@ describe("Method", () => {
   });
   test("has a method input that can be typed into", async () => {
     renderWithRedux(<Method />, { initialState });
+    const method = screen.getByLabelText("Method");
     act(() => {
-      userEvent.type(screen.getByLabelText("Method"), "V60");
+      userEvent.type(method, "French Press");
     });
-    expect(screen.getByLabelText("Method")).toHaveValue("V60");
+    expect(method).toHaveValue("French Press");
   });
 });

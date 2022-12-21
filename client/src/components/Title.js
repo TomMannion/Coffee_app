@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setTitle } from "../features/titleSlice";
 
 function Title() {
-  const title = useSelector((state) => state.title.title);
+  const title = useSelector((state) => state.title.value);
   const dispatch = useDispatch();
 
   return (

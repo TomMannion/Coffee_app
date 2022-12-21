@@ -5,10 +5,6 @@ import GrindSize from "./GrindSize";
 
 describe("GrindSize", () => {
   const initialState = { grindSize: { value: "" } };
-  test("renders GrindSize component", () => {
-    renderWithRedux(<GrindSize />, { initialState });
-    screen.debug();
-  });
   test("has a grindSize input", () => {
     renderWithRedux(<GrindSize />, { initialState });
     const grindSize = screen.getByLabelText("Grind Size");

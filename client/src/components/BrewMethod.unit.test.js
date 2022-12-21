@@ -5,10 +5,6 @@ import BrewMethod from "./BrewMethod";
 
 describe("BrewMethod", () => {
   const initialState = { brewMethod: { value: "" } };
-  test("renders BrewMethod component", () => {
-    renderWithRedux(<BrewMethod />, { initialState });
-    screen.debug();
-  });
   test("has a brewMethod input", () => {
     renderWithRedux(<BrewMethod />, { initialState });
     const brewMethod = screen.getByLabelText("Brew Method");

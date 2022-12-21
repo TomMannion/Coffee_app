@@ -1,42 +1,75 @@
-import { screen } from "@testing-library/react";
-import { renderWithRedux } from "../utils/utils-for-tests";
+import { render, screen } from "@testing-library/react";
+import * as reactRedux from "react-redux";
 import Submit from "./Submit";
-import mockAxios from "axios";
+import axios from "axios";
+
+jest.mock("react-redux", () => ({
+  useSelector: jest.fn(),
+  useDispatch: jest.fn(),
+}));
+
+jest.mock("axios", () => ({
+  ...jest.requireActual("axios"),
+  post: jest.fn(),
+}));
 
 describe("Submit", () => {
-  const initialState = { pourGroup: { value: [] } };
-  test("renders Submit component", () => {
-    renderWithRedux(<Submit />, { initialState });
-    screen.debug();
+  beforeEach(() => {
+    useDispatchMock.mockImplementation(() => () => {});
+    useSelectorMock.mockImplementation((selector) => selector(mockStore));
   });
-  test("has a Submit button", () => {
-    renderWithRedux(<Submit />, { initialState });
+  afterEach(() => {
+    useDispatchMock.mockClear();
+    useSelectorMock.mockClear();
+  });
+
+  const useSelectorMock = reactRedux.useSelector;
+  const useDispatchMock = reactRedux.useDispatch;
+
+  const mockStore = {
+    roaster: { value: "roaster" },
+    origin: { value: "origin" },
+    grinder: { value: "grinder" },
+    grindSize: { value: "grindSize" },
+    brewMethod: { value: "brewMethod" },
+    addPour: { value: "addPour" },
+    pourGroup: { value: [] },
+    method: { value: "method" },
+    comment: { value: "comment" },
+    slider: { value: "slider" },
+    submit: { value: "submit" },
+    amount: { value: "amount" },
+    waterTemp: { value: "waterTemp" },
+    title: { value: "title" },
+  };
+
+  test("has a submit button", () => {
+    render(<Submit />);
     const submit = screen.getByText("Submit");
     expect(submit).toBeInTheDocument();
   });
-  test("should submit a post request on click", async () => {
-    const { store } = renderWithRedux(<Submit />, { initialState });
-    // mock the post request
-    mockAxios.post.mockImplementationOnce(() =>
-      Promise.resolve({
-        data: {
-          pourGroup: {
-            value: [
-              {
-                grindSize: "Medium",
-                amount: "12g",
-                time: "1:00",
-                temperature: "200F",
-              },
-            ],
-          },
-        },
-      })
-    );
-
-    // click the submit button
-    userEvent.click(screen.getByText("Submit"));
-    // get the state from the store
+  test("has a submit button that can be clicked", async () => {
+    render(<Submit />);
+    const submit = screen.getByText("Submit");
+    submit.click();
     expect(axios.post).toHaveBeenCalledTimes(1);
+    expect(axios.post).toHaveBeenCalledWith(
+      "http://localhost:3500/posts/create",
+      {
+        brewMethod: "brewMethod",
+        coffeeWeight: "amount",
+        comment: "comment",
+        grindSize: "grindSize",
+        grinder: "grinder",
+        image: "https://picsum.photos/200",
+        method: "method",
+        origin: "origin",
+        pourGroup: [],
+        roaster: "roaster",
+        tasteProfile: "slider",
+        title: "title",
+        waterTemp: "waterTemp",
+      }
+    );
   });
 });

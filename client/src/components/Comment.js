@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setComment } from "../features/commentSlice";
 
 function Comment() {
-  const comment = useSelector((state) => state.comment.comment);
+  const comment = useSelector((state) => state.comment.value);
   const dispatch = useDispatch();
 
   return (
