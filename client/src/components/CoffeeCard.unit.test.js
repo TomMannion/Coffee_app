@@ -8,7 +8,11 @@ const props = {
     title: "Test Title",
     image: "https://www.google.com",
     brewMethod: "French Press",
-    method: "French Press",
+    pourGroup: [
+      { pour: "100", time: "30" },
+      { pour: "100", time: "30" },
+    ],
+    method: "This is a method",
     grinder: "Hario Skerton",
     comment: "This is a comment",
   },
@@ -24,5 +28,19 @@ describe("CoffeeCard", () => {
     render(<CoffeeCard {...props} />);
     const Comment = screen.getByText("This is a comment");
     expect(Comment).toBeInTheDocument();
+  });
+  test("has a button to expand information", () => {
+    render(<CoffeeCard {...props} />);
+    const Expand = screen.getByLabelText("show more");
+    expect(Expand).toBeInTheDocument();
+  });
+  test("can expand for more information", () => {
+    render(<CoffeeCard {...props} />);
+    const Expand = screen.getByLabelText("show more");
+    act(() => {
+      userEvent.click(Expand);
+    });
+    const Method = screen.getByText("Method: This is a method");
+    expect(Method).toBeInTheDocument();
   });
 });
