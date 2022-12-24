@@ -33,20 +33,6 @@ const CoffeeCard = ({ post }) => {
     setExpanded(!expanded);
   };
 
-  // const tasteProfile = (taste) => {
-  //   if (taste < 20) {
-  //     ("Very acidic");
-  //   } else if (taste < 40) {
-  //     ("Acidic");
-  //   } else if (taste < 60) {
-  //     ("Balanced");
-  //   } else if (taste < 80) {
-  //     ("Bitter");
-  //   } else {
-  //     ("Very bitter");
-  //   }
-  // };
-
   console.log("post", post);
 
   return (
