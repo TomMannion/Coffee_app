@@ -12,6 +12,7 @@ const props = {
       { pour: "100", time: "30" },
       { pour: "100", time: "30" },
     ],
+    coffeeWeight: "20",
     method: "This is a method",
     grinder: "Hario Skerton",
     comment: "This is a comment",
@@ -34,7 +35,7 @@ describe("CoffeeCard", () => {
     const Expand = screen.getByLabelText("show more");
     expect(Expand).toBeInTheDocument();
   });
-  test("can expand for more information", () => {
+  test("can expand for more information - method", () => {
     render(<CoffeeCard {...props} />);
     const Expand = screen.getByLabelText("show more");
     act(() => {
@@ -42,5 +43,14 @@ describe("CoffeeCard", () => {
     });
     const Method = screen.getByText("Method: This is a method");
     expect(Method).toBeInTheDocument();
+  });
+  test("can expand for more information - brew time", () => {
+    render(<CoffeeCard {...props} />);
+    const Expand = screen.getByLabelText("show more");
+    act(() => {
+      userEvent.click(Expand);
+    });
+    const AmountOfCoffee = screen.getByText("Amount of Coffee: 20g");
+    expect(AmountOfCoffee).toBeInTheDocument();
   });
 });
