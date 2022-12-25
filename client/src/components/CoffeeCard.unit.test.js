@@ -53,4 +53,19 @@ describe("CoffeeCard", () => {
     const AmountOfCoffee = screen.getByText("Amount of Coffee: 20g");
     expect(AmountOfCoffee).toBeInTheDocument();
   });
+
+  test("can shrink for less information", () => {
+    render(<CoffeeCard {...props} />);
+    //need to wait for each expand to finish before clicking the next one
+    const Expand = screen.getByLabelText("show more");
+    act(() => {
+      userEvent.click(Expand);
+    });
+    const Shrink = screen.getByLabelText("show more");
+    act(() => {
+      userEvent.click(Shrink);
+    });
+    const Method = screen.queryByText("Method: This is a method");
+    expect(Method).not.toBeInTheDocument();
+  });
 });
