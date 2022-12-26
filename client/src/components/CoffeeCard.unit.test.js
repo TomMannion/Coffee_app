@@ -54,18 +54,23 @@ describe("CoffeeCard", () => {
     expect(AmountOfCoffee).toBeInTheDocument();
   });
 
-  test("can shrink for less information", () => {
+  test("can shrink for less information", async () => {
     render(<CoffeeCard {...props} />);
     //need to wait for each expand to finish before clicking the next one
     const Expand = screen.getByLabelText("show more");
     act(() => {
       userEvent.click(Expand);
     });
-    const Shrink = screen.getByLabelText("show more");
-    act(() => {
-      userEvent.click(Shrink);
+    await waitFor(() => {
+      const Method = screen.getByText("Method: This is a method");
+      expect(Method).toBeInTheDocument();
     });
-    const Method = screen.queryByText("Method: This is a method");
-    expect(Method).not.toBeInTheDocument();
+    act(() => {
+      userEvent.click(Expand);
+    });
+    await waitFor(() => {
+      const Method = screen.queryByText("Method: This is a method");
+      expect(Method).not.toBeInTheDocument();
+    });
   });
 });
