@@ -1,8 +1,14 @@
 import { render, screen, act, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CoffeeCard from "./CoffeeCard";
-// pass in props to CoffeeCard
+// Mock Timer component
+jest.mock("./Timer", () => {
+  return function Timer() {
+    return <div data-testid="timer">Timer</div>;
+  };
+});
 
+// pass in props to CoffeeCard
 const props = {
   post: {
     title: "Test Title",
@@ -56,7 +62,6 @@ describe("CoffeeCard", () => {
 
   test("can shrink for less information", async () => {
     render(<CoffeeCard {...props} />);
-    //need to wait for each expand to finish before clicking the next one
     const Expand = screen.getByLabelText("show more");
     act(() => {
       userEvent.click(Expand);
