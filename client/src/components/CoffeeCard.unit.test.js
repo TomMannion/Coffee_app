@@ -2,11 +2,7 @@ import { render, screen, act, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CoffeeCard from "./CoffeeCard";
 // Mock Timer component
-jest.mock("./Timer", () => {
-  return function Timer() {
-    return <div data-testid="timer">Timer</div>;
-  };
-});
+jest.mock("./Timer");
 
 // pass in props to CoffeeCard
 const props = {
@@ -22,6 +18,8 @@ const props = {
     method: "This is a method",
     grinder: "Hario Skerton",
     comment: "This is a comment",
+    origin: "Test Origin",
+    tasteProfile: "20",
   },
 };
 
@@ -77,5 +75,16 @@ describe("CoffeeCard", () => {
       const Method = screen.queryByText("Method: This is a method");
       expect(Method).not.toBeInTheDocument();
     });
+  });
+  test("can expand for more information - Timer", () => {
+    render(<CoffeeCard {...props} />);
+    const Expand = screen.getByLabelText("show more");
+    act(() => {
+      userEvent.click(Expand);
+    });
+    const Time = screen.getAllByText("30s");
+    const Pour = screen.getAllByText("100g");
+    expect(Pour).toHaveLength(2);
+    expect(Time).toHaveLength(2);
   });
 });
