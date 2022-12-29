@@ -87,4 +87,13 @@ describe("CoffeeCard", () => {
     expect(Pour).toHaveLength(2);
     expect(Time).toHaveLength(2);
   });
+  test("can expand for more information - Origin", () => {
+    render(<CoffeeCard {...props} />);
+    const Expand = screen.getByLabelText("show more");
+    act(() => {
+      userEvent.click(Expand);
+    });
+    const Origin = screen.getByText("Origin: Test Origin");
+    expect(Origin).toBeInTheDocument();
+  });
 });
