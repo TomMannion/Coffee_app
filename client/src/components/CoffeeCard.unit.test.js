@@ -96,4 +96,13 @@ describe("CoffeeCard", () => {
     const Origin = screen.getByText("Origin: Test Origin");
     expect(Origin).toBeInTheDocument();
   });
+  test("can expand for more information - TasteProfile", () => {
+    render(<CoffeeCard {...props} />);
+    const Expand = screen.getByLabelText("show more");
+    act(() => {
+      userEvent.click(Expand);
+    });
+    const tasteProfile = screen.getByText("Taste profile: 20");
+    expect(tasteProfile).toBeInTheDocument();
+  });
 });
