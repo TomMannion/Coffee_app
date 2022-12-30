@@ -105,4 +105,13 @@ describe("CoffeeCard", () => {
     const tasteProfile = screen.getByText("Taste profile: 20");
     expect(tasteProfile).toBeInTheDocument();
   });
+  test("can expand for more information - Grinder", () => {
+    render(<CoffeeCard {...props} />);
+    const Expand = screen.getByLabelText("show more");
+    act(() => {
+      userEvent.click(Expand);
+    });
+    const grinder = screen.getByText("Grinder: Hario Skerton");
+    expect(grinder).toBeInTheDocument();
+  });
 });
