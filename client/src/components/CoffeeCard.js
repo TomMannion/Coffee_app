@@ -33,8 +33,6 @@ const CoffeeCard = ({ post }) => {
     setExpanded(!expanded);
   };
 
-  console.log("post", post);
-
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader

@@ -2,9 +2,9 @@ import React from "react";
 const Timer = ({ times }) => {
   return (
     <div>
-      {times.map((time) => {
+      {times.map((time, index) => {
         return (
-          <div>
+          <div key={`${time}${index}`}>
             <h2>{`${time.time}s`}</h2>
             <h2>{`${time.pour}g`}</h2>
           </div>
