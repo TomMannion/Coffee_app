@@ -1,5 +1,4 @@
-import { render, screen, act, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen, waitFor } from "@testing-library/react";
 import CoffeeGroup from "./CoffeeGroup";
 import * as axios from "axios";
 
@@ -21,7 +20,6 @@ describe("CoffeeGroup", () => {
     axios.get.mockImplementation(() =>
       Promise.resolve({ data: [{ title: "test" }] })
     );
-    // wrap in act to avoid warning
     render(<CoffeeGroup />);
     // wait for axios to resolve
     await waitFor(() => {
