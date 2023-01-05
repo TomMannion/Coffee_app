@@ -8,5 +8,5 @@
 </div>
 
 A coffee brewing companion to create and share recipes. You can record individual pours and then follow along with your own or other recipes!
-![Site](https://github.com/TomMannion/Coffee_app/blob/main/site.png?raw=true)
-![Card](https://github.com/TomMannion/Coffee_app/blob/main/card.png?raw=true)
+<img src="site.png" alt="site" width="200"/>
+<img src="card.png" alt="card" width="200"/>
