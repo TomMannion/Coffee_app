@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
-
 import Button from "@mui/material/Button";
+import "./Timer.css";
 
 const Timer = ({ times }) => {
   const [timer, setTimer] = useState(
@@ -75,9 +75,9 @@ const Timer = ({ times }) => {
                 justifyContent: "center",
                 alignItems: "center",
                 // borderRadius: "50%",
-                background: `linear-gradient(90deg, rgba(231,143,143,1) ${
+                background: `linear-gradient(90deg, rgba(0,0,0,0.62) ${
                   100 - (100 / times[index].pourTime) * time
-                }%, rgba(140,237,148,1) ${
+                }%, rgba(0,0,0,0.20) ${
                   100 - (100 / times[index].pourTime) * time
                 }%)`,
                 width: "100%",
@@ -91,15 +91,47 @@ const Timer = ({ times }) => {
         ))}
       </Grid>
       {isRunning ? (
-        <Button variant="outlined" onClick={startTimer}>
+        <Button
+          className="start-button"
+          variant="contained"
+          onClick={startTimer}
+          sx={{
+            mr: 2,
+            bgcolor: "rgba(206, 0, 0, 0.4)",
+            "&:hover": {
+              bgcolor: "rgba(206, 0, 0, 0.6)",
+            },
+          }}
+        >
           START
         </Button>
       ) : (
-        <Button variant="contained" onClick={startTimer}>
+        <Button
+          className="pause-button"
+          variant="contained"
+          onClick={startTimer}
+          sx={{
+            mr: 2,
+            bgcolor: "rgba(206, 0, 0, 0.4)",
+            "&:hover": {
+              bgcolor: "rgba(206, 0, 0, 0.6)",
+            },
+          }}
+        >
           PAUSE
         </Button>
       )}
-      <Button variant="contained" onClick={resetTimer}>
+      <Button
+        variant="contained"
+        onClick={resetTimer}
+        sx={{
+          mr: 2,
+          bgcolor: "rgba(206, 0, 0, 0.4)",
+          "&:hover": {
+            bgcolor: "rgba(206, 0, 0, 0.6)",
+          },
+        }}
+      >
         RESET
       </Button>
     </div>
