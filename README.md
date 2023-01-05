@@ -6,3 +6,7 @@
   <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white"/> 
   <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB"/><img src="https://img.shields.io/badge/Mongoose-black?style=for-the-badge&logo=Mongoose&logoColor=white"/>
 </div>
+
+A coffee brewing companion to create and share recipes. You can record individual pours and then follow along with your own or other recipes!
+![Site](https://github.com/TomMannion/Coffee_app/blob/main/site.png?raw=true)
+![Card](https://github.com/TomMannion/Coffee_app/blob/main/card.png?raw=true)
