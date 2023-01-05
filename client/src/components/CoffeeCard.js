@@ -14,6 +14,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState, useEffect } from "react";
 import Timer from "./Timer";
+import "./CoffeeCard.css";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -26,6 +27,24 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+const loadAvatar = (brewMethod) => {
+  // load avatar based on brew method from assets folder
+  switch (brewMethod) {
+    case "aeropress":
+      return require("../assets/aeropress.png");
+    case "chemex":
+      return require("../assets/chemex.png");
+    case "french press":
+      return require("../assets/french-press.png");
+    case "V60":
+      return require("../assets/pour-over.png");
+    case "batch brew":
+      return require("../assets/batch-brew.png");
+    default:
+      return require("../assets/aeropress.png");
+  }
+};
+
 const CoffeeCard = ({ post }) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -37,17 +56,19 @@ const CoffeeCard = ({ post }) => {
     <Card sx={{ width: 300 }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: pink[200] }} aria-label="recipe">
-            {post.brewMethod.slice(0, 3).toUpperCase()}
+          <Avatar
+            className="avatar"
+            sx={{ bgcolor: "#fff" }}
+            aria-label="recipe"
+          >
+            <img
+              className="avatarImg"
+              src={loadAvatar(post.brewMethod)}
+              alt="avatar"
+            />
           </Avatar>
         }
         title={post.title}
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image={post.image}
-        alt="PlaceHolder alt"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
