@@ -20,7 +20,7 @@ function CoffeeGroup() {
           container
           justifyContent="center"
           xs={12}
-          md={6}
+          md={4}
           lg={3}
           key={post + index}
         >

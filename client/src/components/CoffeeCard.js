@@ -34,7 +34,7 @@ const CoffeeCard = ({ post }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 300 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: pink[200] }} aria-label="recipe">
