@@ -7,11 +7,12 @@
   <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB"/><img src="https://img.shields.io/badge/Mongoose-black?style=for-the-badge&logo=Mongoose&logoColor=white"/>
 </div>
 
-<>
+<br>
 A coffee brewing companion to create and share recipes. You can record individual pours and then follow along with your own or other recipes!
-<>
+<br>
+<br>
 
-<div>
+<div align="center">
   <img src="site.png" alt="site" width="200"/>
   <img src="card.png" alt="card" width="200"/>
 </div>
