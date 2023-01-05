@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import Button from "@mui/material/Button";
-import "./Timer.css";
 
 const Timer = ({ times }) => {
   const [timer, setTimer] = useState(

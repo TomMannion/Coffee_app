@@ -40,6 +40,8 @@ const loadAvatar = (brewMethod) => {
       return require("../assets/pour-over.png");
     case "batch brew":
       return require("../assets/batch-brew.png");
+    case "siphon":
+      return require("../assets/siphon.png");
     default:
       return require("../assets/aeropress.png");
   }
