@@ -30,4 +30,14 @@ describe("Slider", () => {
     const taste = screen.getByRole("slider");
     expect(taste).toBeInTheDocument();
   });
+  test("if Slider can be moved with mouse", () => {
+    render(<Slider />);
+    const taste = screen.getByRole("slider");
+    act(() => {
+      // click and drag down
+      userEvent.click(taste, { clientX: 0, clientY: 1 });
+    });
+    expect(taste).toHaveValue("0");
+  });
+  // test if keyboard can change slider value
 });
