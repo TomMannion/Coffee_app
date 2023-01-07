@@ -7,10 +7,13 @@ import CoffeeCard from "./CoffeeCard";
 function CoffeeGroup() {
   const [coffeeGroup, setCoffeeGroup] = useState([]);
 
+  const fetchCoffeeGroup = async () => {
+    const response = await axios.get("http://localhost:3500/posts/all");
+    setCoffeeGroup(response.data);
+  };
+
   useEffect(() => {
-    axios.get("http://localhost:3500/posts/all").then((res) => {
-      setCoffeeGroup(res.data);
-    });
+    fetchCoffeeGroup();
   }, []);
 
   return (
