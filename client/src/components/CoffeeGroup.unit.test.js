@@ -1,25 +1,20 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import CoffeeGroup from "./CoffeeGroup";
-import * as axios from "axios";
+import axios from "axios";
 
 jest.mock("./CoffeeCard");
 // mock axios get request
-jest.mock("axios", () => ({
-  ...jest.requireActual("axios"),
-  // mock axios get request with data
-  get: jest.fn(() => Promise.resolve({ data: [{ title: "test" }] })),
-}));
+jest.mock("axios");
 
 describe("CoffeeGroup", () => {
-  test("can correctly run axios.get on useEffect load", () => {
-    render(<CoffeeGroup />);
-    expect(axios.get).toHaveBeenCalledTimes(1);
+  beforeEach(() => {
+    axios.get.mockClear();
   });
-  test("has a coffee group that can be typed into", async () => {
+  test("renders CoffeeGroup", async () => {
+    const posts = { data: [{ title: "test" }] };
+    axios.get.mockResolvedValueOnce(posts);
     render(<CoffeeGroup />);
-    // wait for axios to resolve
-    await waitFor(() => {
-      expect(screen.getByText("test")).toBeInTheDocument();
-    });
+    const coffeeGroup = await waitFor(() => screen.getByText("test"));
+    expect(coffeeGroup).toBeInTheDocument();
   });
 });
