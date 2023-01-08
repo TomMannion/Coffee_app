@@ -17,4 +17,11 @@ describe("CoffeeGroup", () => {
     const coffeeGroup = await waitFor(() => screen.getByText("test"));
     expect(coffeeGroup).toBeInTheDocument();
   });
+  test("renders multiple CoffeeGroup", async () => {
+    const posts = { data: [{ title: "test" }, { title: "test" }] };
+    axios.get.mockResolvedValueOnce(posts);
+    render(<CoffeeGroup />);
+    const coffeeGroup = await waitFor(() => screen.getAllByText("test"));
+    expect(coffeeGroup.length).toBe(2);
+  });
 });
