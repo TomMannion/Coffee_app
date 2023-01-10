@@ -40,27 +40,27 @@ function CoffeeForm() {
     case 0:
       return (
         <Grid container justifyContent="center" spacing={2} sx={{ pt: 12 }}>
-          <Grid container justifyContent="center">
-            <Grid container xs={5}>
-              <GridItem comp={<Roaster />} />
-              <GridItem comp={<Origin />} />
-              <button onClick={prevPage}>Previous</button>
-              <button onClick={nextPage}>Next</button>
-            </Grid>
-          </Grid>
+          <GridItem comp={<BrewMethod />} />
+          <button onClick={prevPage}>Previous</button>
+          <button onClick={nextPage}>Next</button>
         </Grid>
       );
     case 1:
       return (
         <Grid container justifyContent="center" spacing={2} sx={{ pt: 12 }}>
-          <Grid container justifyContent="center">
-            <Grid container xs={5}>
-              <GridItem comp={<Grinder />} />
-              <GridItem comp={<GrindSize />} />
-              <button onClick={prevPage}>Previous</button>
-              <button onClick={nextPage}>Next</button>
-            </Grid>
-          </Grid>
+          <GridItem comp={<Roaster />} />
+          <GridItem comp={<Origin />} />
+          <button onClick={prevPage}>Previous</button>
+          <button onClick={nextPage}>Next</button>
+        </Grid>
+      );
+    case 2:
+      return (
+        <Grid container justifyContent="center" spacing={2} sx={{ pt: 12 }}>
+          <GridItem comp={<Grinder />} />
+          <GridItem comp={<GrindSize />} />
+          <button onClick={prevPage}>Previous</button>
+          <button onClick={nextPage}>Next</button>
         </Grid>
       );
   }
