@@ -20,6 +20,14 @@ import Slider from "./Slider";
 function CoffeeForm() {
   const [page, setPage] = useState(0);
 
+  function GridItem({ comp }) {
+    return (
+      <Grid item xs={12} md={6}>
+        {comp}
+      </Grid>
+    );
+  }
+
   const nextPage = () => {
     setPage(page + 1);
   };
@@ -28,5 +36,34 @@ function CoffeeForm() {
     setPage(page - 1);
   };
 
-  return {};
+  switch (page) {
+    case 0:
+      return (
+        <Grid container justifyContent="center" spacing={2} sx={{ pt: 12 }}>
+          <GridItem comp={<BrewMethod />} />
+          <button onClick={prevPage}>Previous</button>
+          <button onClick={nextPage}>Next</button>
+        </Grid>
+      );
+    case 1:
+      return (
+        <Grid container justifyContent="center" spacing={2} sx={{ pt: 12 }}>
+          <GridItem comp={<Roaster />} />
+          <GridItem comp={<Origin />} />
+          <button onClick={prevPage}>Previous</button>
+          <button onClick={nextPage}>Next</button>
+        </Grid>
+      );
+    case 2:
+      return (
+        <Grid container justifyContent="center" spacing={2} sx={{ pt: 12 }}>
+          <GridItem comp={<Grinder />} />
+          <GridItem comp={<GrindSize />} />
+          <button onClick={prevPage}>Previous</button>
+          <button onClick={nextPage}>Next</button>
+        </Grid>
+      );
+  }
 }
+
+export default CoffeeForm;
