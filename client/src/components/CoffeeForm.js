@@ -63,6 +63,15 @@ function CoffeeForm() {
           <button onClick={nextPage}>Next</button>
         </Grid>
       );
+    case 3:
+      return (
+        <Grid container justifyContent="center" spacing={2} sx={{ pt: 12 }}>
+          <GridItem comp={<AddPour />} />
+          <GridItem comp={<PourGroup />} />
+          <button onClick={prevPage}>Previous</button>
+          <button onClick={nextPage}>Next</button>
+        </Grid>
+      );
   }
 }
 
