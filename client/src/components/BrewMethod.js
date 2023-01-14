@@ -8,13 +8,26 @@ function BrewMethod() {
   const dispatch = useDispatch();
 
   return (
-    <TextField
-      className="brewMethod"
-      type="text"
-      label="Brew Method"
-      value={brewMethod}
-      onChange={(e) => dispatch(setBrewMethod(e.target.value))}
-    />
+    // row of buttons for each brew method  (pour over, french press, etc)
+    <div>
+      <button onClick={() => dispatch(setBrewMethod("Aeropress"))}>
+        Aeropress
+      </button>
+      <button onClick={() => dispatch(setBrewMethod("Chemex"))}>Chemex</button>
+      <button onClick={() => dispatch(setBrewMethod("French Press"))}>
+        French Press
+      </button>
+      <button onClick={() => dispatch(setBrewMethod("Pour Over"))}>
+        Pour Over
+      </button>
+      <button onClick={() => dispatch(setBrewMethod("V60"))}>V60</button>
+      <button onClick={() => dispatch(setBrewMethod("Espresso"))}>
+        Espresso
+      </button>
+      <button onClick={() => dispatch(setBrewMethod("Cold Brew"))}>
+        Cold Brew
+      </button>
+    </div>
   );
 }
 
