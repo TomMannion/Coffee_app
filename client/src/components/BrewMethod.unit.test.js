@@ -30,4 +30,9 @@ describe("BrewMethod", () => {
     const aeropress = screen.getByText("Aeropress");
     expect(aeropress).toBeInTheDocument();
   });
+  test("test if Chemex exists", () => {
+    render(<BrewMethod />);
+    const chemex = screen.getByText("Chemex");
+    expect(aeropress).toBeInTheDocument();
+  });
 });
