@@ -35,9 +35,14 @@ describe("BrewMethod", () => {
     const chemex = screen.getByText("Chemex");
     expect(chemex).toBeInTheDocument();
   });
-  test("test if Chemex exists", () => {
+  test("test if V60 exists", () => {
     render(<BrewMethod />);
     const V60 = screen.getByText("V60");
     expect(V60).toBeInTheDocument();
+  });
+  test("test if Chemex exists", () => {
+    render(<BrewMethod />);
+    const frenchPress = screen.getByText("French Press");
+    expect(frenchPress).toBeInTheDocument();
   });
 });
