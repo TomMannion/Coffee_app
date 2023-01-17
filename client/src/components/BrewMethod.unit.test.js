@@ -50,4 +50,9 @@ describe("BrewMethod", () => {
     const coldBrew = screen.getByText("Cold Brew");
     expect(coldBrew).toBeInTheDocument();
   });
+  test("test if Espresso exists", () => {
+    render(<BrewMethod />);
+    const expresso = screen.getByText("Espresso");
+    expect(expresso).toBeInTheDocument();
+  });
 });
