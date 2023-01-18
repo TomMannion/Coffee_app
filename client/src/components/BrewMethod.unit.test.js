@@ -55,4 +55,13 @@ describe("BrewMethod", () => {
     const expresso = screen.getByText("Espresso");
     expect(expresso).toBeInTheDocument();
   });
+  test("if i can click on Aeropress", () => {
+    render(<BrewMethod />);
+    const aeropress = screen.getByText("Aeropress");
+    act(() => {
+      userEvent.click(aeropress);
+    });
+    // expect called once
+    expect(useDispatchMock).toHaveBeenCalledTimes(1);
+  });
 });
