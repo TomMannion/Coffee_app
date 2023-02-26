@@ -29,11 +29,19 @@ function CoffeeForm() {
   }
 
   const nextPage = () => {
-    setPage(page + 1);
+    if (page === 3) {
+      return;
+    } else {
+      setPage(page + 1);
+    }
   };
 
   const prevPage = () => {
-    setPage(page - 1);
+    if (page === 0) {
+      return;
+    } else {
+      setPage(page - 1);
+    }
   };
 
   switch (page) {
@@ -69,7 +77,7 @@ function CoffeeForm() {
           <GridItem comp={<AddPour />} />
           <GridItem comp={<PourGroup />} />
           <button onClick={prevPage}>Previous</button>
-          <button onClick={nextPage}>Next</button>
+          <button onClick={nextPage}>{page === 3 ? "Submit" : "Next"}</button>
         </Grid>
       );
   }
