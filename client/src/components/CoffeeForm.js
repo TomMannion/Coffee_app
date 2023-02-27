@@ -16,9 +16,36 @@ import WaterTemp from "./WaterTemp";
 import Title from "./Title";
 import Method from "./Method";
 import Slider from "./Slider";
+import { useSelector, useDispatch } from "react-redux";
 
 function CoffeeForm() {
   const [page, setPage] = useState(0);
+  const submitAll = useSelector((state) => state);
+  const formatSubmit = () => {
+    const formattedSubmit = {
+      roaster: submitAll.roaster.value,
+      origin: submitAll.origin.value,
+      brewMethod: submitAll.brewMethod.value,
+      grinder: submitAll.grinder.value,
+      grindSize: submitAll.grindSize.value,
+      pourGroup: submitAll.pourGroup.value.map((pour) => {
+        return { pourWeight: pour.pour, pourTime: pour.time };
+      }),
+      comment: submitAll.comment.value,
+      coffeeWeight: submitAll.amount.value,
+      waterTemp: submitAll.waterTemp.value,
+      method: submitAll.method.value,
+      title: submitAll.title.value,
+      tasteProfile: submitAll.slider.value,
+      image: "https://picsum.photos/200",
+    };
+    return formattedSubmit;
+  };
+
+  const handleSubmit = async () => {
+    await axios.post("http://localhost:3500/posts/create", formatSubmit());
+    window.location.reload(false);
+  };
 
   function GridItem({ comp }) {
     return (
@@ -30,7 +57,7 @@ function CoffeeForm() {
 
   const nextPage = () => {
     if (page === 3) {
-      return;
+      handleSubmit();
     } else {
       setPage(page + 1);
     }

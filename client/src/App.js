@@ -1,6 +1,7 @@
 import "./App.css";
 import Content from "./components/Content";
 import CoffeeForm from "./components/CoffeeForm";
+import TestForm from "./components/TestForm";
 import CoffeeGroup from "./components/CoffeeGroup";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -11,7 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<CoffeeGroup />} />
-        <Route path="/post" element={<CoffeeForm />} />
+        <Route path="/post" element={<TestForm />} />
       </Routes>
     </div>
   );
