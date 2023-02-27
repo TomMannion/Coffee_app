@@ -31,9 +31,9 @@ const loadAvatar = (brewMethod) => {
   // load avatar based on brew method from assets folder
   switch (brewMethod) {
     case "aeropress":
-      return require("../assets/aeropress.png");
+      return require("../assets/Aeropress.png");
     case "chemex":
-      return require("../assets/chemex.png");
+      return require("../assets/Chemex.png");
     case "french press":
       return require("../assets/french-press.png");
     case "V60":
@@ -43,7 +43,7 @@ const loadAvatar = (brewMethod) => {
     case "siphon":
       return require("../assets/siphon.png");
     default:
-      return require("../assets/aeropress.png");
+      return require("../assets/Aeropress.png");
   }
 };
 
