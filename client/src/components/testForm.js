@@ -4,10 +4,11 @@ import { Field, Form, Formik } from "formik";
 import { Stepper, Step, StepLabel } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 import { useState } from "react";
-
-// import formik material ui
 import * as React from "react";
 import StepOne from "./StepOne";
+import StepTwo from "./StepTwo";
+import StepThree from "./StepThree";
+import StepFour from "./StepFour";
 
 export default function TestForm() {
   return (
@@ -15,6 +16,9 @@ export default function TestForm() {
       <CardContent>
         <FormikStepper initialValues={{}}>
           <Field component={StepOne} />
+          <Field component={StepTwo} />
+          <Field component={StepThree} />
+          <Field component={StepFour} />
         </FormikStepper>
       </CardContent>
     </Card>
@@ -48,10 +52,7 @@ export function FormikStepper({ children, ...props }) {
         <Form autoComplete="off">
           <Stepper alternativeLabel activeStep={step}>
             {childrenArray.map((child, index) => (
-              <Step
-                key={child.props.label}
-                completed={step > index || completed}
-              >
+              <Step key={index} completed={step > index || completed}>
                 <StepLabel>{child.props.label}</StepLabel>
               </Step>
             ))}
