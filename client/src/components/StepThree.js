@@ -1,4 +1,3 @@
-// combine Origin and Roaster into one component
 import Grinder from "./Grinder";
 import GrindSize from "./GrindSize";
 import Grid from "@mui/material/Grid";
