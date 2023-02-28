@@ -1,4 +1,3 @@
-// combine Origin and Roaster into one component
 import Origin from "./Origin";
 import Roaster from "./Roaster";
 import Grid from "@mui/material/Grid";
