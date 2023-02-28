@@ -47,7 +47,6 @@ function BrewMethod() {
           <Grid item xs={4} md={4} key={index}>
             <Button
               className="brewMethod"
-              // set brew method to the method that was clicked and set button to clicked
               onClick={() => dispatch(setBrewMethod(method))}
               variant="contained"
               color={brewMethod === method ? "primary" : "inherit"}
