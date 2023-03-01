@@ -9,12 +9,40 @@ import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 export default function TestForm() {
+  const submitAll = useSelector((state) => state);
+  const formatSubmit = () => {
+    const formattedSubmit = {
+      roaster: submitAll.roaster.value,
+      origin: submitAll.origin.value,
+      brewMethod: submitAll.brewMethod.value,
+      grinder: submitAll.grinder.value,
+      grindSize: submitAll.grindSize.value,
+      pourGroup: submitAll.pourGroup.value.map((pour) => {
+        return { pourWeight: pour.pour, pourTime: pour.time };
+      }),
+      comment: submitAll.comment.value,
+      coffeeWeight: submitAll.amount.value,
+      waterTemp: submitAll.waterTemp.value,
+      method: submitAll.method.value,
+      title: submitAll.title.value,
+      tasteProfile: submitAll.slider.value,
+      image: "https://picsum.photos/200",
+    };
+    return formattedSubmit;
+  };
+  const handleSubmit = async () => {
+    await axios.post("http://localhost:3500/posts/create", formatSubmit());
+    window.location.reload(false);
+  };
+
   return (
     <Card>
       <CardContent>
-        <FormikStepper initialValues={{}}>
+        <FormikStepper initialValues={{}} onSubmit={handleSubmit}>
           <Field component={StepOne} />
           <Field component={StepTwo} />
           <Field component={StepThree} />
