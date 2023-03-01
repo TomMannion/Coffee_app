@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 
 export default function StepOne() {
   return (
-    <Grid container justifyContent="center" spacing={2} sx={{ pt: 12 }}>
+    <Grid container justifyContent="center" spacing={2} sx={{ pt: "20px" }}>
       <BrewMethod />
     </Grid>
   );

@@ -49,7 +49,10 @@ export function FormikStepper({ children, ...props }) {
       }}
     >
       {({ isSubmitting }) => (
-        <Form autoComplete="off">
+        <Form
+          autoComplete="off"
+          style={{ paddingLeft: "20px", paddingRight: "20px" }}
+        >
           <Stepper alternativeLabel activeStep={step}>
             {childrenArray.map((child, index) => (
               <Step key={index} completed={step > index || completed}>
@@ -58,11 +61,12 @@ export function FormikStepper({ children, ...props }) {
             ))}
           </Stepper>
 
-          {currentChild}
-
           <Grid container spacing={2}>
+            <Grid item xs={12}>
+              {currentChild}
+            </Grid>
             {step > 0 ? (
-              <Grid item>
+              <Grid item xs={6}>
                 <Button
                   disabled={isSubmitting}
                   variant="contained"
@@ -72,8 +76,10 @@ export function FormikStepper({ children, ...props }) {
                   Back
                 </Button>
               </Grid>
-            ) : null}
-            <Grid item>
+            ) : (
+              <Grid xs={6} />
+            )}
+            <Grid item xs={6}>
               <Button
                 startIcon={
                   isSubmitting ? <CircularProgress size="1rem" /> : null

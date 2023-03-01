@@ -13,8 +13,8 @@ function PourGroup() {
     <Grid container className="pourGroup" justifyContent="center" spacing={2}>
       {pourGroup.map((pour, index) => {
         return (
-          <Grid container item justifyContent="center" key={index} xs={12}>
-            <Grid item xs={2}>
+          <Grid container item key={index} spacing={1}>
+            <Grid item xs={6}>
               <TextField
                 className="pourWeight"
                 type="text"
@@ -30,7 +30,7 @@ function PourGroup() {
                 }
               />
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={6}>
               <TextField
                 className="pourTime"
                 type="text"

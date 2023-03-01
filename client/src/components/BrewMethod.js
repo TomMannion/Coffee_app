@@ -2,7 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setBrewMethod } from "../features/brewMethodSlice";
 import Grid from "@mui/material/Grid";
+import { TextField } from "@mui/material";
 import Button from "@mui/material/Button";
+import { width } from "@mui/system";
 
 function BrewMethod() {
   const brewMethod = useSelector((state) => state.brewMethod.value);
@@ -41,28 +43,55 @@ function BrewMethod() {
 
   return (
     // loop over brewMethods array and create a Grid item for each with a button and an image inside
-    <Grid container justifyContent="center" spacing={2}>
+    <Grid
+      container
+      spacing={2}
+      justifyContent="center"
+      style={{ padding: "20px" }}
+    >
       {brewMethods.map((method, index) => {
         return (
-          <Grid item xs={4} md={4} key={index}>
+          <Grid item xs={6} md={4} key={index}>
             <Button
               className="brewMethod"
               onClick={() => dispatch(setBrewMethod(method))}
               variant="contained"
+              sx={{ width: "100%", height: "100%" }}
               color={brewMethod === method ? "primary" : "inherit"}
             >
-              <img
-                src={loadAvatar(method)}
-                alt={method}
-                className="brewMethodImage"
-                width={100}
-                height={100}
-              />
-              {method}
+              <Grid container justifyContent="center">
+                <Grid item xs={12}>
+                  <img
+                    src={loadAvatar(method)}
+                    alt={method}
+                    className="brewMethodImage"
+                    width={100}
+                    height={100}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  {method}
+                </Grid>
+              </Grid>
             </Button>
           </Grid>
         );
       })}
+      <Grid
+        item
+        xs={6}
+        md={4}
+        style={{
+          paddingTop: "30px",
+        }}
+      >
+        <TextField
+          className="brewMethod"
+          label="Other"
+          value={brewMethod}
+          onChange={(e) => dispatch(setBrewMethod(e.target.value))}
+        />
+      </Grid>
     </Grid>
   );
 }
