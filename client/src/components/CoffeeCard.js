@@ -74,7 +74,7 @@ const CoffeeCard = ({ post }) => {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {post.comment}
+          {post.method}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -99,8 +99,8 @@ const CoffeeCard = ({ post }) => {
           <Typography paragraph>
             Amount of Coffee: {post.coffeeWeight}g
           </Typography>
+          <Typography paragraph>Roaster: {post.roaster}</Typography>
           <Typography paragraph>Origin: {post.origin}</Typography>
-          <Typography paragraph>Taste profile: {post.tasteProfile}</Typography>
           <Typography paragraph>Grinder: {post.grinder}</Typography>
         </CardContent>
       </Collapse>

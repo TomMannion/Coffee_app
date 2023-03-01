@@ -32,7 +32,7 @@ function ResponsiveAppBar() {
     if (page === "EXPLORE") {
       return "/";
     } else {
-      return page.toLowerCase();
+      return "/" + page.toLowerCase();
     }
   };
 
@@ -90,7 +90,15 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link
+                    to={isExplore(page)}
+                    style={{ textDecoration: "none" }}
+                    key={page}
+                  >
+                    <Typography textAlign="center" sx={{ color: "black" }}>
+                      {page}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -129,7 +137,7 @@ function ResponsiveAppBar() {
               >
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ my: 2, color: "black", display: "block" }}
                 >
                   {page}
                 </Button>

@@ -24,12 +24,10 @@ export default function TestForm() {
       pourGroup: submitAll.pourGroup.value.map((pour) => {
         return { pourWeight: pour.pour, pourTime: pour.time };
       }),
-      comment: submitAll.comment.value,
       coffeeWeight: submitAll.amount.value,
       waterTemp: submitAll.waterTemp.value,
       method: submitAll.method.value,
       title: submitAll.title.value,
-      tasteProfile: submitAll.slider.value,
       image: "https://picsum.photos/200",
     };
     return formattedSubmit;

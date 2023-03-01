@@ -7,12 +7,10 @@ const postSchema = new mongoose.Schema({
   grinder: String,
   grindSize: Number,
   pourGroup: { type: Array, default: [] },
-  comment: String,
   coffeeWeight: Number,
   waterTemp: Number,
   method: String,
   title: String,
-  tasteProfile: Number,
   image: String,
 });
 
