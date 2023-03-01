@@ -75,10 +75,7 @@ export function FormikStepper({ children, ...props }) {
       }}
     >
       {({ isSubmitting }) => (
-        <Form
-          autoComplete="off"
-          style={{ paddingLeft: "20px", paddingRight: "20px" }}
-        >
+        <Form autoComplete="off">
           <Stepper alternativeLabel activeStep={step}>
             {childrenArray.map((child, index) => (
               <Step key={index} completed={step > index || completed}>
@@ -87,7 +84,7 @@ export function FormikStepper({ children, ...props }) {
             ))}
           </Stepper>
 
-          <Grid container spacing={2}>
+          <Grid container justifyContent="center" spacing={1}>
             <Grid item xs={12}>
               {currentChild}
             </Grid>
@@ -98,6 +95,7 @@ export function FormikStepper({ children, ...props }) {
                   variant="contained"
                   color="primary"
                   onClick={() => setStep((s) => s - 1)}
+                  style={{ float: "right" }}
                 >
                   Back
                 </Button>
@@ -114,6 +112,7 @@ export function FormikStepper({ children, ...props }) {
                 variant="contained"
                 color="primary"
                 type="submit"
+                style={{ float: "left" }}
               >
                 {isSubmitting ? "Submitting" : isLastStep() ? "Submit" : "Next"}
               </Button>

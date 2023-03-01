@@ -47,26 +47,25 @@ function BrewMethod() {
       container
       spacing={2}
       justifyContent="center"
-      style={{ padding: "20px" }}
+      style={{ paddingLeft: "16px", paddingTop: "16px" }}
     >
       {brewMethods.map((method, index) => {
         return (
-          <Grid item xs={6} md={4} key={index}>
+          <Grid item xs={6} key={index}>
             <Button
               className="brewMethod"
               onClick={() => dispatch(setBrewMethod(method))}
               variant="contained"
-              sx={{ width: "100%", height: "100%" }}
               color={brewMethod === method ? "primary" : "inherit"}
             >
-              <Grid container justifyContent="center">
+              <Grid container>
                 <Grid item xs={12}>
                   <img
                     src={loadAvatar(method)}
                     alt={method}
                     className="brewMethodImage"
-                    width={100}
-                    height={100}
+                    width={80}
+                    height={80}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -80,14 +79,14 @@ function BrewMethod() {
       <Grid
         item
         xs={6}
-        md={4}
         style={{
           paddingTop: "30px",
         }}
       >
         <TextField
+          autoFocus
           className="brewMethod"
-          label="Other"
+          label="Other Method"
           value={brewMethod}
           onChange={(e) => dispatch(setBrewMethod(e.target.value))}
         />

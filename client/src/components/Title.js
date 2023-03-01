@@ -9,6 +9,7 @@ function Title() {
 
   return (
     <TextField
+      autoFocus
       className="title"
       type="text"
       label="Title"

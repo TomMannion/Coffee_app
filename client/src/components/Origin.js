@@ -65,7 +65,6 @@ function Origin() {
       })}
       <Grid item xs={12} sx={{ width: "100%" }}>
         <TextField
-          autoFocus
           className="origin"
           type="text"
           label="Enter a coffee origin"

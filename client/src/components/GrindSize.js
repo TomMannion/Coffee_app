@@ -9,6 +9,7 @@ function GrindSize() {
 
   return (
     <TextField
+      autoFocus
       className="grindSize"
       type="text"
       label="Grind Size"

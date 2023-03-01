@@ -74,7 +74,7 @@ const Timer = ({ times }) => {
                 justifyContent: "center",
                 alignItems: "center",
                 // borderRadius: "50%",
-                background: `linear-gradient(90deg, rgba(0,0,0,0.62) ${
+                background: `linear-gradient(90deg, rgba(0,0,0,0) ${
                   100 - (100 / times[index].pourTime) * time
                 }%, rgba(0,0,0,0.20) ${
                   100 - (100 / times[index].pourTime) * time
