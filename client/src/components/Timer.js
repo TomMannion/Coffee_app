@@ -58,7 +58,7 @@ const Timer = ({ times }) => {
 
   return (
     <div className="Timer">
-      <Grid container spacing={2} justifyContent="center" pb={2}>
+      <Grid container justifyContent="center" pb={2}>
         {timer.map((time, index) => (
           <Grid
             container

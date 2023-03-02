@@ -17,19 +17,10 @@ function CoffeeGroup() {
   }, []);
 
   return (
-    <Grid container spacing={2}>
+    <Grid container justifyContent="center" spacing={0}>
       {coffeeGroup.map((post, index) => (
-        <Grid
-          container
-          justifyContent="center"
-          xs={12}
-          md={4}
-          lg={3}
-          key={post + index}
-        >
-          <Grid item>
-            <CoffeeCard post={post} />
-          </Grid>
+        <Grid item xs={12} md={4} lg={3} key={post + index}>
+          <CoffeeCard post={post} />
         </Grid>
       ))}
     </Grid>

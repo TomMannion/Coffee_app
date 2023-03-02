@@ -7,3 +7,14 @@
   height: 80%;
   margin: 0 auto;
 }
+
+.coffee_card{
+  box-shadow: 0, 0, 0, 0;
+}
+
+.card_top {
+}
+
+.card_bottom {
+  z-index: 0;
+}
