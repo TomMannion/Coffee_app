@@ -83,10 +83,11 @@ function BrewMethod() {
           paddingTop: "30px",
         }}
       >
+        <div style={{ paddingBottom: "10px" }}>Can't see it? Add your own!</div>
         <TextField
           autoFocus
           className="brewMethod"
-          label="Other Method"
+          label="Other Methods"
           value={brewMethod}
           onChange={(e) => dispatch(setBrewMethod(e.target.value))}
         />

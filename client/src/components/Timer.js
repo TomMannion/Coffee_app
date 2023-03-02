@@ -76,7 +76,7 @@ const Timer = ({ times }) => {
                 // borderRadius: "50%",
                 background: `linear-gradient(90deg, rgba(0,0,0,0) ${
                   100 - (100 / times[index].pourTime) * time
-                }%, rgba(0,0,0,0.20) ${
+                }%, rgba(206,0,0,0.20) ${
                   100 - (100 / times[index].pourTime) * time
                 }%)`,
                 width: "100%",
