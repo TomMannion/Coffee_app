@@ -5,9 +5,9 @@
 html,body{
   overflow-x: hidden;
 }
-.body::-webkit-scrollbar {
+/* .body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .App-logo {
   height: 40vmin;

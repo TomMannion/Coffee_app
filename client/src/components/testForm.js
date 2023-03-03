@@ -101,7 +101,7 @@ export function FormikStepper({ children, ...props }) {
                 </Button>
               </Grid>
             ) : (
-              <Grid xs={6} />
+              <Grid item xs={6} />
             )}
             <Grid item xs={6}>
               <Button
