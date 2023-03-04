@@ -1,17 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  value: [""],
+};
+
 export const methodSlice = createSlice({
   name: "method",
-  initialState: {
-    value: "",
-  },
+  initialState,
+  // reducers: {
+  //   setMethod: (state, action) => {
+  //     state.value = action.payload;
+  //   },
+  // },
   reducers: {
-    setMethod: (state, action) => {
-      state.value = action.payload;
+    setIndividualStep: (state, action) => {
+      state.value[action.payload.index] = action.payload.step;
+    },
+    addToStepArray: (state) => {
+      state.value.push("");
     },
   },
 });
 
-export const { setMethod } = methodSlice.actions;
+export const { setIndividualStep, addToStepArray } = methodSlice.actions;
 
 export default methodSlice.reducer;

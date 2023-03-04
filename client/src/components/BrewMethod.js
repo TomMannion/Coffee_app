@@ -47,13 +47,14 @@ function BrewMethod() {
       container
       spacing={2}
       justifyContent="center"
-      style={{ paddingLeft: "16px", paddingTop: "16px" }}
+      style={{ paddingLeft: "22px", paddingTop: "16px" }}
     >
       {brewMethods.map((method, index) => {
         return (
           <Grid item xs={6} key={index}>
             <Button
               className="brewMethod"
+              style={{ width: "130px" }}
               onClick={() => dispatch(setBrewMethod(method))}
               variant="contained"
               color={brewMethod === method ? "primary" : "inherit"}

@@ -45,7 +45,7 @@ function CoffeeGroup() {
   return (
     <Grid container justifyContent="center" spacing={0}>
       <Grid container item xs={12} p={"20px"}>
-        <Grid item xs={4} style={{ width: "180px" }}>
+        <Grid item xs={4} style={{ width: "180px" }} ml={1} mr={1}>
           <Filter data={originData} setData={setOrigin} label={"Origin"} />
         </Grid>
         <Grid item xs={4} style={{ width: "180px" }}>

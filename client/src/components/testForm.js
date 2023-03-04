@@ -11,6 +11,7 @@ import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import "./Form.css";
 
 export default function TestForm() {
   const submitAll = useSelector((state) => state);
@@ -39,8 +40,8 @@ export default function TestForm() {
   };
 
   return (
-    <Card>
-      <CardContent>
+    <Card className="form-wrapper">
+      <CardContent className="form">
         <FormikStepper initialValues={{}} onSubmit={handleSubmit}>
           <Field component={StepOne} />
           <Field component={StepTwo} />

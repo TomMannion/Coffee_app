@@ -57,7 +57,7 @@ const CoffeeCard = ({ post }) => {
   return (
     <Card
       className={expanded ? "card_top" : "card_regular"}
-      sx={{ width: "100%", minHeight: "220px", borderRadius: "0px" }}
+      sx={{ minWidth: "100%", minHeight: "220px", borderRadius: "0px" }}
     >
       <CardHeader
         avatar={
