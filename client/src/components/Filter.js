@@ -20,8 +20,17 @@ export default function Filter(props) {
   // const classes = useStyles();
 
   return (
-    <FormControl variant="outlined" style={{ minWidth: "180px" }}>
-      <InputLabel id="filter">{props.label}</InputLabel>
+    <FormControl variant="outlined" style={{ minWidth: "180px" }} hiddenLabel>
+      <InputLabel
+        id="filter"
+        style={{
+          backgroundColor: "white",
+          paddingLeft: "3px",
+          paddingRight: "3px",
+        }}
+      >
+        {props.label}
+      </InputLabel>
       <Select
         onChange={(event) => {
           props.setData(event.target.value);
