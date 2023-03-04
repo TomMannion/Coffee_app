@@ -13,13 +13,13 @@ function Method() {
 
   return (
     // for each step in the method, create a text field if steps is not empty else create a text field with a placeholder
-    <Grid container spacing={1}>
+    <Grid container spacing={1} justifyContent="center">
+      Please enter the steps to make your recipe.
       {steps.length > 0 ? (
         steps.map((step, index) => {
           return (
             <Grid item xs={12} key={step + index}>
               <TextField
-                autoFocus
                 className="method"
                 type="text"
                 label={`Step ${index + 1}`}
@@ -37,7 +37,6 @@ function Method() {
       ) : (
         <Grid item xs={12}>
           <TextField
-            autoFocus
             className="method"
             type="text"
             label="Step 1"
@@ -55,6 +54,7 @@ function Method() {
       {/*add a button to add new steps */}
       <Grid item xs={12}>
         <Button
+          variant="outlined"
           onClick={() => {
             const newSteps = [...steps];
             newSteps.push("");

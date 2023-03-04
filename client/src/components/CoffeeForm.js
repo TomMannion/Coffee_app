@@ -16,6 +16,7 @@ import WaterTemp from "./WaterTemp";
 import Title from "./Title";
 import Method from "./Method";
 import Slider from "./Slider";
+import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 
 function CoffeeForm() {

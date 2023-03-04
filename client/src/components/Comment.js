@@ -8,15 +8,18 @@ function Comment() {
   const dispatch = useDispatch();
 
   return (
-    <TextField
-      className="comment"
-      type="text"
-      label="Comment"
-      multiline
-      rows={4}
-      value={comment}
-      onChange={(e) => dispatch(setComment(e.target.value))}
-    />
+    <div>
+      <TextField
+        className="comment"
+        type="text"
+        label="A short description of the recipe."
+        multiline
+        rows={3}
+        value={comment}
+        onChange={(e) => dispatch(setComment(e.target.value))}
+        inputProps={{ maxLength: 120 }}
+      />
+    </div>
   );
 }
 

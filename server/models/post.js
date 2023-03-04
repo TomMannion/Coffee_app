@@ -9,7 +9,8 @@ const postSchema = new mongoose.Schema({
   pourGroup: { type: Array, default: [] },
   coffeeWeight: Number,
   waterTemp: Number,
-  method: String,
+  method: { type: Array, default: [] },
+  comment: String,
   title: String,
   image: String,
 });

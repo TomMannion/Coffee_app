@@ -2,12 +2,9 @@
   text-align: center;
 }
 
-html,body{
+body{
   overflow-x: hidden;
 }
-/* .body::-webkit-scrollbar {
-  display: none;
-} */
 
 .App-logo {
   height: 40vmin;

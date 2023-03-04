@@ -1,5 +1,10 @@
 import React from "react";
-import TextField from "@mui/material/TextField";
+import {
+  FormControl,
+  InputAdornment,
+  OutlinedInput,
+  FormHelperText,
+} from "@mui/material";
 import Button from "@mui/material/Button";
 import { Grid } from "@mui/material";
 import { useState } from "react";
@@ -32,13 +37,17 @@ function WaterTemp() {
         );
       })}
       <Grid item xs={6}>
-        <TextField
-          className="WaterTemp"
-          type="text"
-          label="Water Temperature"
-          value={waterTemp}
-          onChange={(e) => dispatch(setWaterTemp(e.target.value))}
-        />
+        <FormControl variant="outlined">
+          <OutlinedInput
+            sx={{ width: "100%" }}
+            className="Water temp"
+            type="text"
+            value={waterTemp}
+            onChange={(e) => dispatch(setWaterTemp(e.target.value))}
+            endAdornment={<InputAdornment position="end">°C</InputAdornment>}
+          />
+          <FormHelperText>Temp of the water</FormHelperText>
+        </FormControl>
       </Grid>
     </Grid>
   );

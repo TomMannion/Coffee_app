@@ -7,7 +7,7 @@ function AddPour(props) {
   const dispatch = useDispatch();
   return (
     <Button
-      variant="contained"
+      variant="outlined"
       onClick={(e) => {
         e.preventDefault();
         dispatch(addToPourArray());

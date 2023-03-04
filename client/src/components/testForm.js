@@ -27,6 +27,7 @@ export default function TestForm() {
       coffeeWeight: submitAll.amount.value,
       waterTemp: submitAll.waterTemp.value,
       method: submitAll.method.value,
+      comment: submitAll.comment.value,
       title: submitAll.title.value,
       image: "https://picsum.photos/200",
     };
