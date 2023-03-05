@@ -11,6 +11,7 @@ const theme = createTheme({
       fontFamily: "monospace",
       textTransform: "none",
       fontSize: 16,
+      color: "#3E1E68",
     },
   },
 });

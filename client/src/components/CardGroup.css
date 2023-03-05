@@ -1,0 +1,26 @@
+.filter {
+  width: 180px;
+}
+
+.bg_filter {
+  background-color: #ffcfcf;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  
+}
+
+.flexstart {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flexend {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 700px) {
+  .filter {
+    width: 100px;
+  }
+}

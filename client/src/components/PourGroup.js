@@ -1,7 +1,8 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
-
+// time selector from MUI
+// https://mui.com/components/time-picker/
 import { useSelector, useDispatch } from "react-redux";
 import { setIndividualPour } from "../features/pourGroupSlice";
 
@@ -17,7 +18,7 @@ function PourGroup() {
             <Grid item xs={6}>
               <TextField
                 className="pourWeight"
-                type="text"
+                type="number"
                 label="Pour Weight"
                 value={pour.pourWeight}
                 onChange={(e) =>
@@ -33,14 +34,14 @@ function PourGroup() {
             <Grid item xs={6}>
               <TextField
                 className="pourTime"
-                type="text"
+                type="number"
                 label="Pour Time"
                 value={pour.pourTime}
                 onChange={(e) =>
                   dispatch(
                     setIndividualPour({
                       index: index,
-                      time: e.target.value,
+                      pour: e.target.value,
                     })
                   )
                 }

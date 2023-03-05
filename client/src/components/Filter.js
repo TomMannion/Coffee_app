@@ -4,6 +4,7 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import "./CardGroup.css";
 
 // const useStyles = makeStyles((theme) => ({
 //   formControl: {
@@ -20,11 +21,11 @@ export default function Filter(props) {
   // const classes = useStyles();
 
   return (
-    <FormControl variant="outlined" style={{ minWidth: "180px" }} hiddenLabel>
+    <FormControl variant="outlined" className="filter" hiddenLabel>
       <InputLabel
         id="filter"
         style={{
-          backgroundColor: "white",
+          backgroundColor: "#fcdbdb",
           paddingLeft: "3px",
           paddingRight: "3px",
         }}

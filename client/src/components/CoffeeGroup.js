@@ -5,6 +5,8 @@ import TextField from "@mui/material/TextField";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CoffeeCard from "./CoffeeCard";
+//import the css file CardGroup.css
+import "./CardGroup.css";
 
 function CoffeeGroup() {
   const [coffeeGroup, setCoffeeGroup] = useState([]);
@@ -44,19 +46,27 @@ function CoffeeGroup() {
 
   return (
     <Grid container justifyContent="center" spacing={0}>
-      <Grid container item xs={12} p={"20px"}>
-        <Grid item xs={4} style={{ width: "180px" }} ml={1} mr={1}>
+      <Grid
+        container
+        className="bg_filter"
+        justifyContent="center"
+        item
+        xs={12}
+        p={"20px"}
+      >
+        <Grid item xs={4} className="flexend">
           <Filter data={originData} setData={setOrigin} label={"Origin"} />
         </Grid>
-        <Grid item xs={4} style={{ width: "180px" }}>
+        <Grid item xs={4}>
           <Filter
             data={brewMethodData}
             setData={setBrewMethod}
             label={"Brew Method"}
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item className="flexstart" xs={4}>
           <TextField
+            className="filter"
             id="outlined-basic"
             label="Title"
             variant="outlined"
