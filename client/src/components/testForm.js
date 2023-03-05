@@ -42,8 +42,15 @@ export default function TestForm() {
   };
 
   return (
-    <Card className="form-wrapper yellowbg">
-      <CardContent className="form">
+    <Card
+      className="form-wrapper"
+      sx={{
+        backgroundColor: "#FFE400",
+        paddingBottom: "70px",
+        boxShadow: "inherit",
+      }}
+    >
+      <CardContent className="form whitebg" sx={{ borderRadius: "20px" }}>
         <FormikStepper initialValues={{}} onSubmit={handleSubmit}>
           <Field component={StepOne} />
           <Field component={StepTwo} />
@@ -67,7 +74,7 @@ export function FormikStepper({ children, ...props }) {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#ffcfcf",
+        main: "#000000",
       },
     },
   });

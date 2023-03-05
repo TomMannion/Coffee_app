@@ -1,4 +1,5 @@
 import "./App.css";
+import "./components/theme.css";
 import TestForm from "./components/TestForm";
 import CoffeeGroup from "./components/CoffeeGroup";
 import { Route, Routes } from "react-router-dom";
@@ -18,7 +19,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    <div className="App">
+    <div className="App yellowbg">
       <ThemeProvider theme={theme}>
         <Navbar />
         <Routes>

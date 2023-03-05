@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setBrewMethod } from "../features/brewMethodSlice";
 import Grid from "@mui/material/Grid";
-import { TextField } from "@mui/material";
+import { Input, TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import syphon from "../assets/syphon.svg";
 import aeropress from "../assets/aeropress.svg";
@@ -17,11 +17,21 @@ import espresso from "../assets/espresso.svg";
 import defaultImg from "../assets/default.svg";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import "./Form.css";
+import "./theme.css";
 
 const theme = createTheme({
+  typography: {
+    allVariants: {
+      fontFamily: "monospace",
+      textTransform: "none",
+      fontSize: 16,
+      color: "black",
+      // backgroundColor: "black",
+    },
+  },
   palette: {
     primary: {
-      main: "#ffb7b7",
+      main: "#000000",
     },
   },
 });
@@ -86,9 +96,13 @@ function BrewMethod() {
               <Button
                 className="brewMethod"
                 style={{
-                  width: "150px",
-                  height: "150px",
-                  backgroundColor: "#fff0ea",
+                  width: "155px",
+                  height: "155px",
+                  backgroundColor: "white",
+                  borderRadius: "10px",
+                  color: "black",
+                  // add border to each button
+                  border: "1px solid black",
                 }}
                 onClick={() => dispatch(setBrewMethod(method))}
                 variant="contained"
@@ -130,6 +144,10 @@ function BrewMethod() {
             label="Other Methods"
             value={brewMethod}
             onChange={(e) => dispatch(setBrewMethod(e.target.value))}
+            sx={{ borderRadius: "5px", input: { color: "black" } }}
+            // InputLabelProps={{
+            //   sx: { backgroundColor: "transparent" },
+            // }}
           />
         </Grid>
       </Grid>

@@ -39,7 +39,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" className="navbar">
+    <AppBar position="static" className="navbar" sx={{ boxShadow: "inherit" }}>
       <Container maxWidth="xl" className="yellowbg">
         <Toolbar disableGutters>
           {/* <AdbIcon
