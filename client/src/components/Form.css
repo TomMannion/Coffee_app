@@ -1,15 +1,21 @@
 .form-wrapper {
   align-items: center;
   display: flex;
+  justify-content: center;
+  margin-top: 2em;
 }
 
 .form {
   margin: 0 auto;
   display: inline-block;
   width: 60%;
-  background-color: #f5f5f5;
+  background-color: #fff0ea;
   border-radius: 5px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.selected{
+  filter: invert(86%) sepia(16%) saturate(845%) hue-rotate(309deg) brightness(103%) contrast(101%);
 }
 
 @media screen and (max-width: 768px) {

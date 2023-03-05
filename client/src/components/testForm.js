@@ -12,6 +12,8 @@ import StepFour from "./StepFour";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import "./Form.css";
+import "./theme.css";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 export default function TestForm() {
   const submitAll = useSelector((state) => state);
@@ -40,7 +42,7 @@ export default function TestForm() {
   };
 
   return (
-    <Card className="form-wrapper">
+    <Card className="form-wrapper yellowbg">
       <CardContent className="form">
         <FormikStepper initialValues={{}} onSubmit={handleSubmit}>
           <Field component={StepOne} />
@@ -62,6 +64,14 @@ export function FormikStepper({ children, ...props }) {
     return step === childrenArray.length - 1;
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#ffcfcf",
+      },
+    },
+  });
+
   return (
     <Formik
       {...props}
@@ -78,14 +88,15 @@ export function FormikStepper({ children, ...props }) {
     >
       {({ isSubmitting }) => (
         <Form autoComplete="off">
-          <Stepper alternativeLabel activeStep={step}>
-            {childrenArray.map((child, index) => (
-              <Step key={index} completed={step > index || completed}>
-                <StepLabel>{child.props.label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-
+          <ThemeProvider theme={theme}>
+            <Stepper alternativeLabel activeStep={step}>
+              {childrenArray.map((child, index) => (
+                <Step key={index} completed={step > index || completed}>
+                  <StepLabel>{child.props.label}</StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+          </ThemeProvider>
           <Grid container justifyContent="center" spacing={1}>
             <Grid item xs={12}>
               {currentChild}

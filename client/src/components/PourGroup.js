@@ -41,7 +41,7 @@ function PourGroup() {
                   dispatch(
                     setIndividualPour({
                       index: index,
-                      pour: e.target.value,
+                      time: e.target.value,
                     })
                   )
                 }

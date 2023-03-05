@@ -1,3 +1,16 @@
 .navbar {
   overflow-x: hidden;
 }
+
+@media screen and (max-width: 900px) {
+  .logoBig {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .logoSmall {
+    display: none;
+  }
+}
+  

@@ -14,6 +14,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 //import navbar css
 import "./Navbar.css";
+import "./theme.css";
+import defaultImg from "../assets/default.svg";
 
 const pages = ["EXPLORE", "POST"];
 
@@ -37,14 +39,24 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" className="navbar" sx={{ bgcolor: "#ffcfcf" }}>
-      <Container maxWidth="xl">
+    <AppBar position="static" className="navbar">
+      <Container maxWidth="xl" className="yellowbg">
         <Toolbar disableGutters>
-          <AdbIcon
+          {/* <AdbIcon
             sx={{
-              color: "#3E1E68",
               display: { xs: "none", md: "flex" },
               mr: 1,
+            }}
+          /> */}
+          <img
+            src={defaultImg}
+            className="logoBig"
+            alt="logo"
+            style={{
+              display: { xs: "none", md: "flex" },
+              mr: 1,
+              width: "100px",
+              height: "100px",
             }}
           />
           <Typography
@@ -59,6 +71,7 @@ function ResponsiveAppBar() {
               fontWeight: 700,
               letterSpacing: ".3rem",
               textDecoration: "none",
+              color: "black",
             }}
           >
             BREWMATE
@@ -71,7 +84,6 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="#3E1E68"
             >
               <MenuIcon />
             </IconButton>
@@ -108,11 +120,20 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon
+          {/* <AdbIcon
             sx={{
               display: { xs: "flex", md: "none" },
               mr: 1,
-              color: "#3E1E68",
+            }}
+          /> */}
+          <img
+            src={defaultImg}
+            alt="logo"
+            className="logoSmall"
+            style={{
+              mr: 1,
+              width: "100px",
+              height: "100px",
             }}
           />
           <Typography
@@ -127,8 +148,8 @@ function ResponsiveAppBar() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "#000",
               textDecoration: "none",
+              color: "black",
             }}
           >
             BREWMATE
@@ -142,7 +163,7 @@ function ResponsiveAppBar() {
               >
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "#3E1E68", display: "block" }}
+                  sx={{ my: 2, color: "black", display: "block" }}
                 >
                   {page}
                 </Button>

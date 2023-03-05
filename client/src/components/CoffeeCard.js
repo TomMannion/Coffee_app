@@ -24,6 +24,7 @@ import dripPot from "../assets/drip-pot.svg";
 import coldBrew from "../assets/cold-brew.svg";
 import espresso from "../assets/espresso.svg";
 import defaultImg from "../assets/default.svg";
+import "./theme.css";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -87,15 +88,14 @@ const CoffeeCard = ({ post }) => {
       className="coffee_card"
       sx={{
         minWidth: "100%",
-        minHeight: "220px",
-        borderRadius: "0px",
+        borderRadius: "10px",
       }}
     >
       <CardHeader
         avatar={
           <Avatar
             className="avatar"
-            sx={{ bgcolor: "#fbdcdc" }}
+            sx={{ bgcolor: "#FFE400" }}
             aria-label="recipe"
           >
             <img

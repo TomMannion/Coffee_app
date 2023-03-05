@@ -1,0 +1,47 @@
+.yellowbg {
+  background-color: #FFE400;
+}
+
+.blackbg {
+  background-color: #000000;
+}
+
+.whitebg {
+  background-color: #ffffff;
+}
+
+/* .MuiInputBase-input  {
+  background: black;
+}
+
+.MuiTextField-root {
+  background: black;
+} */
+
+.wave {
+  --size: 50px;
+  --p: 25px;
+  --R: sqrt(var(--p) * var(--p) + var(--size)*var(--size));
+
+  height: 100%;
+
+  mask:
+    radial-gradient(var(--R) at 50% calc(var(--size) + var(--p)), #000 99%, #0000 101%) 
+      calc(50% - 2*var(--size)) 0 / calc(4 * var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(-1*var(--p)), #0000 99%, #000 101%) 
+      50% var(--size)/calc(4 * var(--size)) 100% repeat-x;
+}
+
+.box {
+  --size: 50px;
+  --p: 25px;
+  --R: 55.9px /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/;
+  
+  height: 100%;
+
+  mask:
+    radial-gradient(var(--R) at 50% calc(100% - (var(--size) + var(--p))),rgb(255, 0, 0) 99%,#0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%,
+    radial-gradient(var(--R) at 50% calc(100% + var(--p)),#0000 99%,red 101%) 50% calc(100% - var(--size))/calc(4*var(--size)) 100% repeat-x;
+  /* background:linear-gradient(90deg,red,blue);   */
+  border: none;
+}
