@@ -23,21 +23,21 @@ function BrewMethod() {
     // load avatar based on brew method from assets folder
     switch (brewMethod) {
       case "aeropress":
-        return require("../assets/Aeropress.png");
+        return require("../assets/aeropress.svg");
       case "chemex":
-        return require("../assets/Chemex.png");
+        return require("../assets/chemex.svg");
       case "french press":
-        return require("../assets/french-press.png");
+        return require("../assets/french-press.svg");
       case "pour over":
-        return require("../assets/pour-over.png");
+        return require("../assets/v60.svg");
       case "batch brew":
-        return require("../assets/batch-brew.png");
+        return require("../assets/batch-brew.svg");
       case "siphon":
-        return require("../assets/siphon.png");
+        return require("../assets/siphon.svg");
       case "moka pot":
-        return require("../assets/moka-pot.png");
+        return require("../assets/moka-pot.svg");
       default:
-        return require("../assets/Aeropress.png");
+        return require("../assets/eropress.png");
     }
   };
 
@@ -54,7 +54,7 @@ function BrewMethod() {
           <Grid item xs={6} key={index}>
             <Button
               className="brewMethod"
-              style={{ width: "130px" }}
+              style={{ width: "130px", height: "130px" }}
               onClick={() => dispatch(setBrewMethod(method))}
               variant="contained"
               color={brewMethod === method ? "primary" : "inherit"}
