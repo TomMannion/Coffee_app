@@ -152,7 +152,15 @@ function ResponsiveAppBar() {
               color: "black",
             }}
           >
+            {/* <div
+              style={{
+                border: "3px solid black",
+                paddingLeft: "5px",
+                backgroundColor: "white",
+              }}
+            > */}
             BREWMATE
+            {/* </div> */}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

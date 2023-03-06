@@ -5,6 +5,8 @@ import Grid from "@mui/material/Grid";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { setOrigin } from "../features/originSlice";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "./Form.css";
 
 function Origin() {
   const origin = useSelector((state) => state.origin.value);
@@ -25,6 +27,22 @@ function Origin() {
     "Uganda",
     "Vietnam",
   ]);
+
+  const theme = createTheme({
+    typography: {
+      allVariants: {
+        fontFamily: "monospace",
+        textTransform: "none",
+        fontSize: 16,
+        color: "black",
+      },
+    },
+    palette: {
+      primary: {
+        main: "#000000",
+      },
+    },
+  });
 
   // make an array of emojis for each country
   const emoji = {
@@ -54,8 +72,16 @@ function Origin() {
               key={index}
               variant="contained"
               onClick={() => dispatch(setOrigin(originPop))}
-              color={origin === originPop ? "primary" : "inherit"}
-              sx={{ width: "100%", height: "100%" }}
+              //active not active classname
+              className={originPop === origin ? "active" : "notactive"}
+              sx={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "#fff",
+                color: "#000",
+                "&.active": { backgroundColor: "#FFE400" },
+                border: "1px solid black",
+              }}
             >
               {emoji[originPop]}
               {originPop}
@@ -64,13 +90,15 @@ function Origin() {
         );
       })}
       <Grid item xs={12} sx={{ width: "100%" }}>
-        <TextField
-          className="origin"
-          type="text"
-          label="Enter a coffee origin"
-          value={origin}
-          onChange={(e) => dispatch(setOrigin(e.target.value))}
-        />
+        <ThemeProvider theme={theme}>
+          <TextField
+            className="origin"
+            type="text"
+            label="Enter a coffee origin"
+            value={origin}
+            onChange={(e) => dispatch(setOrigin(e.target.value))}
+          />
+        </ThemeProvider>
       </Grid>
     </Grid>
   );

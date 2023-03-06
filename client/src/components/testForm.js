@@ -36,9 +36,32 @@ export default function TestForm() {
     };
     return formattedSubmit;
   };
+  const readyToSubmit = () => {
+    if (
+      submitAll.roaster.value !== "" &&
+      submitAll.origin.value !== "" &&
+      submitAll.brewMethod.value !== "" &&
+      submitAll.grinder.value !== "" &&
+      submitAll.grindSize.value !== "" &&
+      submitAll.pourGroup.value !== { pour: "", time: "" } &&
+      submitAll.amount.value !== "" &&
+      submitAll.waterTemp.value !== "" &&
+      submitAll.method.value !== "" &&
+      submitAll.comment.value !== "" &&
+      submitAll.title.value !== ""
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   const handleSubmit = async () => {
-    await axios.post("http://localhost:3500/posts/create", formatSubmit());
-    window.location.reload(false);
+    if (readyToSubmit()) {
+      await axios.post("http://localhost:3500/posts/create", formatSubmit());
+      window.location.reload(false);
+    } else {
+      return;
+    }
   };
 
   return (
@@ -67,8 +90,27 @@ export function FormikStepper({ children, ...props }) {
   const [step, setStep] = React.useState(0);
   const currentChild = childrenArray[step];
   const [completed, setCompleted] = useState(false);
+  const submitAll = useSelector((state) => state);
   const isLastStep = () => {
     return step === childrenArray.length - 1;
+  };
+
+  const nextStep = () => {
+    // check if brewMethod is set
+    if (step === 0) {
+      if (submitAll.brewMethod.value === "") {
+        return;
+      }
+    } else if (step === 1) {
+      if (submitAll.origin.value === "" || submitAll.roaster.value === "") {
+        return;
+      }
+    } else if (step === 2) {
+      if (submitAll.grinder.value === "" || submitAll.grindSize.value === "") {
+        return;
+      }
+    }
+    setStep((s) => s + 1);
   };
 
   const theme = createTheme({
@@ -124,18 +166,27 @@ export function FormikStepper({ children, ...props }) {
               <Grid item xs={6} />
             )}
             <Grid item xs={6}>
-              <Button
-                startIcon={
-                  isSubmitting ? <CircularProgress size="1rem" /> : null
-                }
-                disabled={isSubmitting}
-                variant="contained"
-                color="primary"
-                type="submit"
-                style={{ float: "left" }}
-              >
-                {isSubmitting ? "Submitting" : isLastStep() ? "Submit" : "Next"}
-              </Button>
+              {isLastStep() ? (
+                <Button
+                  disabled={isSubmitting}
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                  style={{ float: "right" }}
+                >
+                  Submit
+                </Button>
+              ) : (
+                <Button
+                  disabled={isSubmitting}
+                  variant="contained"
+                  color="primary"
+                  onClick={nextStep}
+                  style={{ float: "right" }}
+                >
+                  Next
+                </Button>
+              )}
             </Grid>
           </Grid>
         </Form>

@@ -32,7 +32,15 @@ function Grinder() {
               variant="contained"
               onClick={() => dispatch(setGrinder(grinderPop))}
               color={grinder === grinderPop ? "primary" : "inherit"}
-              sx={{ width: "100%", height: "100%" }}
+              className={grinderPop === grinder ? "active" : "notactive"}
+              sx={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "#fff",
+                color: "#000",
+                "&.active": { backgroundColor: "#FFE400" },
+                border: "1px solid black",
+              }}
             >
               {grinderPop}
             </Button>

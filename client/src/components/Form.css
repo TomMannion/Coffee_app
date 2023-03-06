@@ -17,7 +17,16 @@
   /* filter: invert(86%) sepia(16%) saturate(845%) hue-rotate(309deg) brightness(103%) contrast(101%); */
   /* add a outline */
   border-radius: 5px;
-  outline: 2px solid #000000;
+  outline: 2px solid #FFE400;
+}
+
+.active {
+  /* filter: invert(86%) sepia(16%) saturate(845%) hue-rotate(309deg) brightness(103%) contrast(101%); */
+  /* add a outline */
+  color: #000000;
+  background-color: #FFE400;
+  /* border-radius: 5px;
+  outline: 2px solid #000000; */
 }
 
 @media screen and (max-width: 768px) {

@@ -5,6 +5,8 @@
 
 body{
   overflow-x: hidden;
+  min-height: 100vh;
+  background-color: #FFE400;
 }
 
 .App-logo {
