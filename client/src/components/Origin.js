@@ -67,7 +67,7 @@ function Origin() {
     <Grid container justifyContent="center" spacing={2}>
       {popularOrigins.map((originPop, index) => {
         return (
-          <Grid item xs={4}>
+          <Grid item xs={4} key={originPop + index}>
             <Button
               key={index}
               variant="contained"

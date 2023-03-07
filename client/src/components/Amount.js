@@ -18,13 +18,20 @@ function Amount() {
     <Grid container justifyContent="center" spacing={2}>
       {popularAmounts.map((amountPop, index) => {
         return (
-          <Grid item xs={4}>
+          <Grid item xs={4} key={"amount" + index}>
             <Button
               key={index}
               variant="contained"
               onClick={() => dispatch(setAmount(amountPop))}
-              color={Amount === amountPop ? "primary" : "inherit"}
-              sx={{ width: "100%", height: "100%" }}
+              className={Amount === amountPop ? "active" : "notactive"}
+              sx={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "#fff",
+                color: "#000",
+                "&.active": { backgroundColor: "#FFE400" },
+                border: "1px solid black",
+              }}
             >
               {amountPop}
             </Button>

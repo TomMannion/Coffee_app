@@ -1,6 +1,6 @@
 // import material UI
 import { Card, CardContent, Typography, Button, Grid } from "@mui/material";
-import { Field, Form, Formik } from "formik";
+import { Field, Form, Formik, useFormik } from "formik";
 import { Stepper, Step, StepLabel } from "@mui/material";
 import { CircularProgress } from "@mui/material";
 import { useState } from "react";
@@ -125,13 +125,12 @@ export function FormikStepper({ children, ...props }) {
     <Formik
       {...props}
       validationSchema={currentChild.props.validationSchema}
-      onSubmit={async (values, helpers) => {
+      onSubmit={async () => {
         if (isLastStep()) {
-          await props.onSubmit(values, helpers);
+          await props.onSubmit();
           setCompleted(true);
         } else {
           setStep((s) => s + 1);
-          helpers.setTouched({});
         }
       }}
     >
@@ -157,7 +156,12 @@ export function FormikStepper({ children, ...props }) {
                   variant="contained"
                   color="primary"
                   onClick={() => setStep((s) => s - 1)}
-                  style={{ float: "right" }}
+                  style={{
+                    width: "120px",
+                    float: "right",
+                    backgroundColor: "black",
+                    color: "white",
+                  }}
                 >
                   Back
                 </Button>
@@ -170,9 +174,13 @@ export function FormikStepper({ children, ...props }) {
                 <Button
                   disabled={isSubmitting}
                   variant="contained"
-                  color="primary"
                   type="submit"
-                  style={{ float: "right" }}
+                  style={{
+                    width: "120px",
+                    float: "left",
+                    backgroundColor: "black",
+                    color: "white",
+                  }}
                 >
                   Submit
                 </Button>
@@ -180,9 +188,13 @@ export function FormikStepper({ children, ...props }) {
                 <Button
                   disabled={isSubmitting}
                   variant="contained"
-                  color="primary"
                   onClick={nextStep}
-                  style={{ float: "right" }}
+                  style={{
+                    width: "120px",
+                    float: "left",
+                    backgroundColor: "black",
+                    color: "white",
+                  }}
                 >
                   Next
                 </Button>

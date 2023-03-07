@@ -109,10 +109,14 @@ const CoffeeCard = ({ post }) => {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {getFlagEmoji(lookup.byCountry(post.origin).iso2)}
+          {post.comment}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {post.method}
+        <Typography paragraph>
+          Amount of Coffee: {post.coffeeWeight}g
+        </Typography>
+        <Typography paragraph>Roaster: {post.roaster}</Typography>
+        <Typography paragraph>
+          {post.origin} {getFlagEmoji(lookup.byCountry(post.origin).iso2)}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -140,11 +144,6 @@ const CoffeeCard = ({ post }) => {
           })}
           <Typography paragraph>
             Amount of Coffee: {post.coffeeWeight}g
-          </Typography>
-          <Typography paragraph>Roaster: {post.roaster}</Typography>
-          <Typography paragraph>
-            {post.origin}
-            {getFlagEmoji(lookup.byCountry(post.origin).iso2)}
           </Typography>
           <Typography paragraph>Grinder: {post.grinder}</Typography>
           <Timer times={post.pourGroup} />

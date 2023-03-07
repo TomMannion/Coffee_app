@@ -26,9 +26,8 @@ function Grinder() {
     <Grid container justifyContent="center" spacing={2}>
       {popularGrinders.map((grinderPop, index) => {
         return (
-          <Grid item xs={6}>
+          <Grid item xs={6} key={"grinder" + index}>
             <Button
-              key={index}
               variant="contained"
               onClick={() => dispatch(setGrinder(grinderPop))}
               color={grinder === grinderPop ? "primary" : "inherit"}

@@ -140,6 +140,7 @@ function BrewMethod() {
           </div>
           <TextField
             autoFocus
+            id="brewMethod"
             className="brewMethod"
             label="Other Methods"
             value={brewMethod}
