@@ -134,9 +134,9 @@
 ### :art: Color Reference
 
 | Color         | Hex                                                              |
-| ------------- | ---------------------------------------------------------------- | ------------------------------------------------------- | --- |
+| ------------- | ---------------------------------------------------------------- | --------------- | ------------------------------------------------------- | --- | --- |
 | Primary Color | ![#FFE400](https://via.placeholder.com/10/FFE400?text=+) #FFE400 |
-| <!--          | Secondary Color                                                  | ![#fff](https://via.placeholder.com/10/fff?text=+) #fff | --> |
+| <!--          |                                                                  | Secondary Color | ![#fff](https://via.placeholder.com/10/fff?text=+) #fff |     | --> |
 | Accent Color  | ![#fff](https://via.placeholder.com/10/fff?text=+) #fff          |
 | Text Color    | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
 
