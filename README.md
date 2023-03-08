@@ -26,9 +26,6 @@
   <a href="https://github.com/TomMannion/Coffee_app/issues/">
     <img src="https://img.shields.io/github/issues/TomMannion/Coffee_app" alt="open issues" />
   </a>
-  <a href="https://github.com/TomMannion/Coffee_app/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/TomMannion/Coffee_app.svg" alt="license" />
-  </a>
 </p>
    
 <h4>
@@ -79,6 +76,11 @@
 
 <div align="center"> 
   <img src="assets/desktop.png" alt="screenshot" width="100%" height="auto" />
+  <img src="assets/mobile.png" alt="screenshot" width="30%" height="auto" />
+  <img src="assets/form1.png" alt="screenshot" width="30%" height="auto" />
+  <img src="assets/form2.png" alt="screenshot" width="30%" height="auto" />
+  <img src="assets/form3.png" alt="screenshot" width="30%" height="auto" />
+  <img src="assets/form4.png" alt="screenshot" width="30%" height="auto" />
 </div>
 
 <!-- TechStack -->
