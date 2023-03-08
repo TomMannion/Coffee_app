@@ -133,12 +133,12 @@
 
 ### :art: Color Reference
 
-| Color           | Hex                                                              |
-| --------------- | ---------------------------------------------------------------- |
-| Primary Color   | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
-| Secondary Color | ![#fff](https://via.placeholder.com/10/fff?text=+) #fff          |
-| Accent Color    | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color      | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
+| Color         | Hex                                                              |
+| ------------- | ---------------------------------------------------------------- | ------------------------------------------------------- | --- |
+| Primary Color | ![#FFE400](https://via.placeholder.com/10/FFE400?text=+) #FFE400 |
+| <!--          | Secondary Color                                                  | ![#fff](https://via.placeholder.com/10/fff?text=+) #fff | --> |
+| Accent Color  | ![#fff](https://via.placeholder.com/10/fff?text=+) #fff          |
+| Text Color    | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
 
 <!-- Env Variables -->
 
