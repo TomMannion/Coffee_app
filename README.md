@@ -50,21 +50,21 @@
   - [Tech Stack](#space_invader-tech-stack)
   - [Features](#dart-features)
   - [Color Reference](#art-color-reference)
-  - [Environment Variables](#key-environment-variables)
+  <!-- - [Environment Variables](#key-environment-variables) -->
 - [Getting Started](#toolbox-getting-started)
-  - [Prerequisites](#bangbang-prerequisites)
-  - [Installation](#gear-installation)
-  - [Running Tests](#test_tube-running-tests)
+    <!-- - [Prerequisites](#bangbang-prerequisites)
+    - [Installation](#gear-installation)
+    - [Running Tests](#test_tube-running-tests) -->
   - [Run Locally](#running-run-locally)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [Usage](#eyes-usage)
+      <!-- - [Deployment](#triangular_flag_on_post-deployment) -->
+    <!-- - [Usage](#eyes-usage) -->
 - [Roadmap](#compass-roadmap)
-- [Contributing](#wave-contributing)
+<!-- - [Contributing](#wave-contributing)
   - [Code of Conduct](#scroll-code-of-conduct)
-- [FAQ](#grey_question-faq)
-- [License](#warning-license)
+- [FAQ](#grey_question-faq) -->
+<!-- - [License](#warning-license) -->
 - [Contact](#handshake-contact)
-- [Acknowledgements](#gem-acknowledgements)
+<!-- - [Acknowledgements](#gem-acknowledgements) -->
 
 <!-- About the Project -->
 
@@ -125,9 +125,9 @@
 
 ### :dart: Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Filter by important details to find the perfect recipe
+- Add your own recipes
+- Mobile friendly
 
 <!-- Color Reference -->
 
@@ -156,34 +156,34 @@ To run this project, you will need to add the following environment variables to
 
 <!-- Prerequisites -->
 
-### :bangbang: Prerequisites
+<!-- ### :bangbang: Prerequisites
 
 This project uses Yarn as package manager
 
 ```bash
  npm install --global yarn
-```
+``` -->
 
 <!-- Installation -->
 
-### :gear: Installation
+<!-- ### :gear: Installation
 
 Install my-project with npm
 
 ```bash
   yarn install my-project
   cd my-project
-```
+``` -->
 
 <!-- Running Tests -->
 
-### :test_tube: Running Tests
+<!-- ### :test_tube: Running Tests
 
 To run tests, run the following command
 
 ```bash
   yarn test test
-```
+``` -->
 
 <!-- Run Locally -->
 
@@ -198,55 +198,69 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd coffee_app
 ```
 
 Install dependencies
 
 ```bash
-  yarn install
+  cd client
+  npm install
+
+  cd server
+  npm install
 ```
 
 Start the server
 
 ```bash
-  yarn start
+  cd server
+  npm start
+```
+
+Start the client
+
+```bash
+  cd client
+  npm start
 ```
 
 <!-- Deployment -->
 
-### :triangular_flag_on_post: Deployment
+<!-- ### :triangular_flag_on_post: Deployment
 
 To deploy this project run
 
 ```bash
   yarn deploy
-```
+``` -->
 
 <!-- Usage -->
 
-## :eyes: Usage
+<!-- ## :eyes: Usage
 
 Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
 
 ```javascript
-import Component from "my-project";
+import Component from "Coffee_app";
 
 function App() {
   return <Component />;
 }
-```
+``` -->
 
 <!-- Roadmap -->
 
 ## :compass: Roadmap
 
-- [x] Todo 1
-- [ ] Todo 2
+- [x] Basic implementaion of a working prototype
+- [ ] Refactor and test the code
+- [ ] Fine tune the form UI and UX
+- [ ] Add a login system with Auth0
 
 <!-- Contributing -->
 
-## :wave: Contributing
+<!-- ## :wave: Contributing
 
 <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
@@ -258,13 +272,13 @@ See `contributing.md` for ways to get started.
 
 <!-- Code of Conduct -->
 
-### :scroll: Code of Conduct
+<!-- ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)
+Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md) -->
 
 <!-- FAQ -->
 
-## :grey_question: FAQ
+<!-- ## :grey_question: FAQ
 
 - Question 1
 
@@ -272,13 +286,13 @@ Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-te
 
 - Question 2
 
-  - Answer 2
+  - Answer 2 -->
 
 <!-- License -->
 
-## :warning: License
+<!-- ## :warning: License
 
-Distributed under the no License. See LICENSE.txt for more information.
+Distributed under the no License. See LICENSE.txt for more information. -->
 
 <!-- Contact -->
 
@@ -286,15 +300,15 @@ Distributed under the no License. See LICENSE.txt for more information.
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+Project Link: [https://github.com/TomMannion/Coffee_app](https://github.com/TomMannion/Coffee_app)
 
 <!-- Acknowledgments -->
 
-## :gem: Acknowledgements
+<!-- ## :gem: Acknowledgements
 
 Use this section to mention useful resources and libraries that you have used in your projects.
 
 - [Shields.io](https://shields.io/)
 - [Awesome README](https://github.com/matiassingers/awesome-readme)
 - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
-- [Readme Template](https://github.com/othneildrew/Best-README-Template)
+- [Readme Template](https://github.com/othneildrew/Best-README-Template) -->
