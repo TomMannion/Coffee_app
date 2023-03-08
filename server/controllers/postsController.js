@@ -1,4 +1,3 @@
-const axios = require("axios");
 const Posts = require("../models/post");
 var mongoose = require("mongoose");
 

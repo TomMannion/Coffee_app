@@ -1,5 +1,7 @@
 .navbar {
   overflow-x: hidden;
+  width: 100vw;
+  background-color: #FFE400;
 }
 
 @media screen and (max-width: 900px) {

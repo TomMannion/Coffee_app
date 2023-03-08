@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: [
-    { pour: "", time: "" },
-    { pour: "", time: "" },
-    { pour: "", time: "" },
-  ],
+  value: [{ pour: "", time: "" }],
 };
 
 export const pourGroupSlice = createSlice({

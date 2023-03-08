@@ -19,24 +19,31 @@ function CoffeeGroup() {
   const [title, setTitle] = React.useState("");
 
   const fetchOriginData = async () => {
-    const response = await axios.get("http://localhost:3500/posts/origins");
+    const response = await axios.get(
+      "https://brewmate-backend.herokuapp.com/posts/origins"
+    );
     setOriginData(response.data);
   };
 
   const fetchBrewMethodData = async () => {
-    const response = await axios.get("http://localhost:3500/posts/brewMethods");
+    const response = await axios.get(
+      "https://brewmate-backend.herokuapp.com/posts/brewMethods"
+    );
     setBrewMethodData(response.data);
   };
 
   const fetchCoffeeGroup = async () => {
     // use the find method to add the chosen origin, title and brew method to the req body if any of the params are empty strings assume that the user does not want to filter by that param
-    const response = await axios.get("http://localhost:3500/posts/find", {
-      params: {
-        origin: origin,
-        title: title,
-        brewMethod: brewMethod,
-      },
-    });
+    const response = await axios.get(
+      "https://brewmate-backend.herokuapp.com/posts/find",
+      {
+        params: {
+          origin: origin,
+          title: title,
+          brewMethod: brewMethod,
+        },
+      }
+    );
     setCoffeeGroup(response.data);
   };
 

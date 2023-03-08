@@ -10,7 +10,8 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const postsRouter = require("./routes/posts");
 
-const mongoDbUrl = process.env.MONGODB_URL || "mongodb://0.0.0.0/coffee_db";
+const mongoDbUrl =
+  "mongodb+srv://admin:Arrogate5@cluster0.p5ghgqn.mongodb.net/brewmate?retryWrites=true&w=majority";
 const conn = mongoose.createConnection(mongoDbUrl);
 
 const app = express();

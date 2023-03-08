@@ -39,7 +39,14 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" className="navbar" sx={{ boxShadow: "inherit" }}>
+    <AppBar
+      position="static"
+      className="navbar"
+      sx={{
+        boxShadow: "inherit",
+        backgroundColor: "#FFE400",
+      }}
+    >
       <Container maxWidth="xl" className="yellowbg">
         <Toolbar disableGutters>
           {/* <AdbIcon
@@ -77,7 +84,13 @@ function ResponsiveAppBar() {
             BREWMATE
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              float: "left",
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"

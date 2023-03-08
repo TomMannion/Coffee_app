@@ -60,7 +60,10 @@ function Submit() {
   };
 
   const handleSubmit = async () => {
-    await axios.post("http://localhost:3500/posts/create", formatSubmit());
+    await axios.post(
+      "https://brewmate-backend.herokuapp.com/posts/create",
+      formatSubmit()
+    );
     window.location.reload(false);
   };
 
