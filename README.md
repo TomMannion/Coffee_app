@@ -1,6 +1,7 @@
-<div align="center" style="border-radius:20%">
+<div align="center">
 
-  <img src="assets/brewmate-logo.png" alt="logo" width="200" height="auto" />
+<kbd><img src="assets/brewmate-logo.png" alt="logo" width="200" height="auto" style="border-radius:20%" /></kbd>
+
   <h1>BrewMate</h1>
   
   <p>
