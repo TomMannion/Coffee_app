@@ -16,8 +16,7 @@ var mongoose = require("mongoose");
 var port = normalizePort(process.env.PORT || "3500");
 app.set("port", port);
 
-var mongoDbUrl =
-  "mongodb+srv://admin:Arrogate5@cluster0.p5ghgqn.mongodb.net/?retryWrites=true&w=majority";
+var mongoDbUrl = process.env.MONGODB_URI || "localhost:3500/coffee_db";
 mongoose.connect(mongoDbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
