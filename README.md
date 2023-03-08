@@ -29,7 +29,7 @@
 </p>
    
 <h4>
-    <a href="https://github.com/TomMannion/Coffee_app/">View Demo</a>
+    <a href="https://brewmate-frontend.herokuapp.com/">View Live Demo</a>
   <span> · </span>
     <a href="https://github.com/TomMannion/Coffee_app">Documentation</a>
   <span> · </span>
