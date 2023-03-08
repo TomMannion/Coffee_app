@@ -75,12 +75,12 @@
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="assets/desktop.png" alt="screenshot" width="100%" height="auto" />
+  <img src="assets/desktop.png" alt="screenshot" width="70%" height="auto" />
   <img src="assets/mobile.png" alt="screenshot" width="30%" height="auto" />
-  <img src="assets/form1.png" alt="screenshot" width="30%" height="auto" />
-  <img src="assets/form2.png" alt="screenshot" width="30%" height="auto" />
-  <img src="assets/form3.png" alt="screenshot" width="30%" height="auto" />
-  <img src="assets/form4.png" alt="screenshot" width="30%" height="auto" />
+  <img src="assets/form1.png" alt="screenshot" width="50%" height="auto" />
+  <img src="assets/form2.png" alt="screenshot" width="50%" height="auto" />
+  <img src="assets/form3.png" alt="screenshot" width="50%" height="auto" />
+  <img src="assets/form4.png" alt="screenshot" width="50%" height="auto" />
 </div>
 
 <!-- TechStack -->
