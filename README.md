@@ -1,6 +1,6 @@
 <div align="center">
 
-<a><img src="assets/brewmate-logo.png" alt="logo" width="200" height="auto" style="border-radius:20%" /></a>
+<img src="assets/brewmate-logo.png" alt="logo" width="200" height="auto" />
 
   <h1>BrewMate</h1>
   
@@ -18,10 +18,10 @@
     <img src="https://img.shields.io/github/last-commit/TomMannion/Coffee_app" alt="last update" />
   </a>
   <a href="https://github.com/TomMannion/Coffee_app/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
+    <img src="https://img.shields.io/github/forks/TomMannion/Coffee_app" alt="forks" />
   </a>
   <a href="https://github.com/TomMannion/Coffee_app/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/awesome-readme-template" alt="stars" />
+    <img src="https://img.shields.io/github/stars/TomMannion/Coffee_app" alt="stars" />
   </a>
   <a href="https://github.com/TomMannion/Coffee_app/issues/">
     <img src="https://img.shields.io/github/issues/TomMannion/Coffee_app" alt="open issues" />
