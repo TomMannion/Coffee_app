@@ -297,7 +297,6 @@ Distributed under the no License. See LICENSE.txt for more information. -->
 
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
 Project Link: [https://github.com/TomMannion/Coffee_app](https://github.com/TomMannion/Coffee_app)
 
